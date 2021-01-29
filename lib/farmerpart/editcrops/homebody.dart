@@ -18,6 +18,7 @@ class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.green[900],
         elevation: 0,
@@ -28,7 +29,7 @@ class _HomeBodyState extends State<HomeBody> {
           children: <Widget>[
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top:8.0, bottom:12),
+                padding: EdgeInsets.only(top:0.008 * MediaQuery.of(context).size.height, bottom:0.012 * MediaQuery.of(context).size.height),
                 child: Text(
                   'Categories',
                   style: TextStyle(
@@ -40,91 +41,95 @@ class _HomeBodyState extends State<HomeBody> {
             ),
             Row(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => OrganicCrop()));
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(top:8.0,bottom: 8.0,right:8.0,left:14.0),
-                    child: Container(
-                      color: Colors.blueGrey[50],
-                      height: 182,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top:18.0),
-                        child: Column(
-                          children: [
-                            Container(
-                            alignment: Alignment.bottomLeft,
-                            padding: EdgeInsets.all(10.0),
-                            width: 182,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white, width: 1),
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage('assets/images/o.jpg'),
-                              ),
-                            ),
-                          ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'Organic \nCrops',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => OrganicCrop()));
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.only(top:0.008 * MediaQuery.of(context).size.height,bottom: 0.008 * MediaQuery.of(context).size.height,right:0.008 * MediaQuery.of(context).size.height,left: 0.014 * MediaQuery.of(context).size.height),
+                      child: Container(
+                        color: Colors.blueGrey[50],
+                        height: 0.2100 * MediaQuery.of(context).size.height,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 0.018 * MediaQuery.of(context).size.height,),
+                          child: Column(
+                            children: [
+                              Container(
+                              alignment: Alignment.bottomLeft,
+                              padding: EdgeInsets.all(0.010 * MediaQuery.of(context).size.height,),
+                              width: 0.199 * MediaQuery.of(context).size.height,
+                              height: 0.110 * MediaQuery.of(context).size.height,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.black54, width: 0.001 * MediaQuery.of(context).size.height,),
+                                shape: BoxShape.circle,
+                                color: Colors.white,
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/images/o.jpg'),
                                 ),
                               ),
                             ),
-                          ],
+                              Padding(
+                                padding: EdgeInsets.all(0.008 * MediaQuery.of(context).size.height,),
+                                child: Text(
+                                  'Organic \nCrops',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 0.021 * MediaQuery.of(context).size.height,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => TraditionalCrop()));
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(5.0),
-                    child: Container(
-                      color: Colors.blueGrey[50],
-                      height: 180,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top:18.0),
-                        child: Column(
-                          children: [
-                            Container(
-                            alignment: Alignment.bottomLeft,
-                            padding: EdgeInsets.all(10.0),
-                            width: 184,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white, width: 1),
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage('assets/images/t.jpg'),
-                              ),
-                            ),
-                          ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'Traditional \nCrops',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => TraditionalCrop()));
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.only(top:0.008 * MediaQuery.of(context).size.height,bottom: 0.008 * MediaQuery.of(context).size.height,right:0.014 * MediaQuery.of(context).size.height,),
+                      child: Container(
+                        color: Colors.blueGrey[50],
+                        height: 0.2100 * MediaQuery.of(context).size.height,
+                        child: Padding(
+                          padding: EdgeInsets.only(top: 0.018 * MediaQuery.of(context).size.height,),
+                          child: Column(
+                            children: [
+                              Container(
+                              alignment: Alignment.bottomLeft,
+                              padding: EdgeInsets.all(0.010 * MediaQuery.of(context).size.height,),
+                              width: 0.199 * MediaQuery.of(context).size.height,
+                              height: 0.110 * MediaQuery.of(context).size.height,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.black54,  width: 0.001 * MediaQuery.of(context).size.height,),
+                                shape: BoxShape.circle,
+                                color: Colors.white,
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/images/t.jpg'),
                                 ),
                               ),
                             ),
-                          ],
+                              Padding(
+                                padding: EdgeInsets.all(0.008 * MediaQuery.of(context).size.height,),
+                                child: Text(
+                                  'Traditional \nCrops',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 0.021 * MediaQuery.of(context).size.height,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -133,7 +138,7 @@ class _HomeBodyState extends State<HomeBody> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(0.008 * MediaQuery.of(context).size.height,),
               child: Center(
                 child: Text(
                   'Crops',
@@ -145,7 +150,7 @@ class _HomeBodyState extends State<HomeBody> {
               ),
             ),
             Container(
-              height: 500,
+            height: 0.598 * MediaQuery.of(context).size.height,
               child: AllProducts(),
             ),
           ],
@@ -168,46 +173,49 @@ class _AllProductsState extends State<AllProducts> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            child: GridView.count(
-              crossAxisCount: 2,
-              childAspectRatio: 0.85,
-              children: [
-                CropCard(
-                  title: 'Coffee',
-                  image: "assets/images/oc.jpg",
-                  press: () {
-                  },
-                  page: Coffee(),
-                ),
-                CropCard(
-                  title: 'Almond',
-                  image: "assets/images/almond.jpg",
-                  press: () {
-                  },
-                  page: Almond(),
-                ),
-                CropCard(
-                  title: 'Desert Lime',
-                  image: "assets/images/lime.jpg",
-                  press: () {
-                  },
-                  page: Lime(),
-                ),
-                CropCard(
-                  title: 'Tomato',
-                  image: "assets/images/tomato.jpg",
-                  press: () {
-                  },
-                  page: Tomatos(),
-                ),
-                CropCard(
-                  title: 'Cotton',
-                  image: "assets/images/cot.jpg",
-                  press: () {
-                  },
-                  page: Cotton(),
-                ),
-              ],
+            child: Padding(
+              padding: EdgeInsets.only(bottom : 0.058 * MediaQuery.of(context).size.height,),
+              child: GridView.count(
+                crossAxisCount: 2,
+                //childAspectRatio: 0.85,
+                children: [
+                  CropCard(
+                    title: 'Coffee',
+                    image: "assets/images/oc.jpg",
+                    press: () {
+                    },
+                    page: Coffee(),
+                  ),
+                  CropCard(
+                    title: 'Almond',
+                    image: "assets/images/almond.jpg",
+                    press: () {
+                    },
+                    page: Almond(),
+                  ),
+                  CropCard(
+                    title: 'Desert Lime',
+                    image: "assets/images/lime.jpg",
+                    press: () {
+                    },
+                    page: Lime(),
+                  ),
+                  CropCard(
+                    title: 'Tomato',
+                    image: "assets/images/tomato.jpg",
+                    press: () {
+                    },
+                    page: Tomatos(),
+                  ),
+                  CropCard(
+                    title: 'Cotton',
+                    image: "assets/images/cotton.jpg",
+                    press: () {
+                    },
+                    page: Cotton(),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

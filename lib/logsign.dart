@@ -1,5 +1,6 @@
 import 'package:farmer/customer/chome.dart';
 import 'package:farmer/farmerpart/home.dart';
+import 'package:farmer/farmvisit/fmvhome.dart';
 import 'package:farmer/signup/farmersignup.dart';
 import 'package:farmer/signup/tradersignup.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +24,8 @@ class _FirstpageState extends State<Firstpage> {
         context: context,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20), 
-            topRight: Radius.circular(20),                                       
+            topLeft: Radius.circular(0.020 * MediaQuery.of(context).size.height,), 
+            topRight: Radius.circular(0.020 * MediaQuery.of(context).size.height,),                                       
           ),
         ),
         isScrollControlled: true,
@@ -45,39 +46,39 @@ class _FirstpageState extends State<Firstpage> {
                              
                       //text
                       Padding(
-                        padding: const EdgeInsets.only(top: 30.0, left: 76, right: 74,),
+                        padding: EdgeInsets.only(top: 0.030 * MediaQuery.of(context).size.height, left: 0.076 * MediaQuery.of(context).size.height, right: 0.074 * MediaQuery.of(context).size.height,),
                           child: Container(
                             alignment: Alignment.center,
-                            height: 24,
+                            height: 0.029 * MediaQuery.of(context).size.height,
                             width: double.infinity,
                               child: Text(
-                                'Are you Farmer or Trader?', 
+                                'Login As', 
                                 style: GoogleFonts.openSans(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,
                                   fontStyle: FontStyle.normal,
                                   color: Color.fromRGBO(0,0,0,1),
-                                  letterSpacing: 1.24,
+                                  letterSpacing: 0.00124 * MediaQuery.of(context).size.height,
                                 ),
                               ),
                           ),
                         ),
 
                         Padding(
-                          padding: EdgeInsets.only(top: 26, left: 26, right: 26,),
+                          padding: EdgeInsets.only(top: 0.026 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height, right: 0.026 * MediaQuery.of(context).size.height,),
                           child: FlatButton(
                             color: Colors.green[700],
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
+                              borderRadius: BorderRadius.circular(0.005 * MediaQuery.of(context).size.height),
                             ),
-                            height: 41,
+                            height: 0.045 * MediaQuery.of(context).size.height,
                             minWidth: double.infinity,
                             child: Text(
                               'Farmer',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w600,
-                                fontSize: 16,
+                                fontSize: 18,
                                 color: Color.fromRGBO(255,255,255,1),
                               ),
                             ),
@@ -85,28 +86,51 @@ class _FirstpageState extends State<Firstpage> {
                           ),
                         ),
 
-                                    
-
-//flatbutton
+                        //farmvisit
                         Padding(
-                          padding: EdgeInsets.only(top: 7, left: 26, right: 26,bottom: 14),
+                          padding: EdgeInsets.only(top: 0.0007 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height, right: 0.026 * MediaQuery.of(context).size.height,),
                           child: FlatButton(
                             color: Colors.green[700],
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
+                              borderRadius: BorderRadius.circular(0.005 * MediaQuery.of(context).size.height),
                             ),
-                            height: 41,
+                            height: 0.045 * MediaQuery.of(context).size.height,
                             minWidth: double.infinity,
                             child: Text(
                               'Trader',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w600,
-                                fontSize: 16,
+                                fontSize: 18,
                                 color: Color.fromRGBO(255,255,255,1),
                               ),
                             ),
                             onPressed: showModalsSheetT,
+                          ),
+                        ),
+
+                                    
+
+//flatbutton
+                        Padding(
+                          padding: EdgeInsets.only(top: 0.0007 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height, right: 0.026 * MediaQuery.of(context).size.height,bottom: 0.014 * MediaQuery.of(context).size.height),
+                          child: FlatButton(
+                            color: Colors.green[700],
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0.005 * MediaQuery.of(context).size.height),
+                            ),
+                            height: 0.045 * MediaQuery.of(context).size.height,
+                            minWidth: double.infinity,
+                            child: Text(
+                              'Farm Visit',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.roboto(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                                color: Color.fromRGBO(255,255,255,1),
+                              ),
+                            ),
+                            onPressed: showModalSheetV,
                           ),
                         ),
 
@@ -131,8 +155,8 @@ class _FirstpageState extends State<Firstpage> {
       context: context,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20), 
-          topRight: Radius.circular(20),                                       
+          topLeft: Radius.circular(0.020 * MediaQuery.of(context).size.height), 
+          topRight: Radius.circular(0.020 * MediaQuery.of(context).size.height),                                       
         ),
       ),
       isScrollControlled: true,
@@ -148,16 +172,16 @@ class _FirstpageState extends State<Firstpage> {
                 right: 0.41,
                 top: -38.59,
                 child: Padding(
-                  padding: const EdgeInsets.only(right:8.0,),
+                  padding: EdgeInsets.only(right:0.008 * MediaQuery.of(context).size.height,),
                   child: Container(
                     alignment: Alignment.centerRight,
-                    height: 29,
-                    width: 28,
+                    height: 0.029 * MediaQuery.of(context).size.height,
+                    width: 0.028 * MediaQuery.of(context).size.height,
                     child: FloatingActionButton(
                       backgroundColor: Color.fromRGBO(255,255,255,1),
                       child: Padding(
-                        padding: const EdgeInsets.all(3.0),
-                        child: Icon(Icons.close_sharp,color: Color.fromRGBO(0,0,0,1),size: 15,),
+                        padding: EdgeInsets.all(0.003 * MediaQuery.of(context).size.height),
+                        child: Icon(Icons.close_sharp,color: Color.fromRGBO(0,0,0,1),size: 0.015 * MediaQuery.of(context).size.height,),
                       ),
                       onPressed: (){
                         Navigator.of(context).push(MaterialPageRoute(
@@ -178,19 +202,19 @@ class _FirstpageState extends State<Firstpage> {
                              
                       //text
                       Padding(
-                        padding: const EdgeInsets.only(top: 30.0, left: 76, right: 74,),
+                        padding: EdgeInsets.only(top: 0.030 * MediaQuery.of(context).size.height, left: 0.076 * MediaQuery.of(context).size.height, right: 0.074 * MediaQuery.of(context).size.height,),
                           child: Container(
                             alignment: Alignment.center,
-                            height: 24,
+                            height: 0.026 * MediaQuery.of(context).size.height,
                             width: double.infinity,
                               child: Text(
                                 'Farmer Login', 
                                 style: GoogleFonts.openSans(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 16,
+                                  fontSize: 15,
                                   fontStyle: FontStyle.normal,
                                   color: Color.fromRGBO(0,0,0,1),
-                                  letterSpacing: 1.24,
+                                  letterSpacing: 0.00124 * MediaQuery.of(context).size.height,
                                 ),
                               ),
                           ),
@@ -205,10 +229,10 @@ class _FirstpageState extends State<Firstpage> {
                             });
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(top: 24, left: 26,right:25,),
+                            padding: EdgeInsets.only(top: 0.024 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height,right:0.025 * MediaQuery.of(context).size.height,),
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(
-                                  maxHeight: 46.0,
+                                  maxHeight: 0.046 * MediaQuery.of(context).size.height,
                                 ),
                                 child: TextField(
                                 textInputAction: TextInputAction.next,
@@ -224,7 +248,7 @@ class _FirstpageState extends State<Firstpage> {
                                   ),
                                   border: InputBorder.none,
                                   hintText: 'Enter Phone Number/Name',
-                                  contentPadding: EdgeInsets.only(bottom: 3, top: 11.35, right: 17,left:20),
+                                  contentPadding: EdgeInsets.only(bottom: 0.0039* MediaQuery.of(context).size.height, top: 0.01135* MediaQuery.of(context).size.height, right: 0.017* MediaQuery.of(context).size.height,left:0.020* MediaQuery.of(context).size.height),
                                   hintStyle: GoogleFonts.roboto(
                                       fontSize: 16,
                                     color: Color.fromRGBO(146,146,146,1),
@@ -243,10 +267,10 @@ class _FirstpageState extends State<Firstpage> {
                             });
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(top: 10, left: 26,right:25,),
+                            padding: EdgeInsets.only(top: 0.010 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height,right:0.025 * MediaQuery.of(context).size.height,),
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(
-                                  maxHeight: 46.0,
+                                  maxHeight: 0.046 * MediaQuery.of(context).size.height,
                                 ),
                                 child: TextField(
                                 textInputAction: TextInputAction.next,
@@ -262,7 +286,7 @@ class _FirstpageState extends State<Firstpage> {
                                   ),
                                   border: InputBorder.none,
                                   hintText: 'Enter Password',
-                                  contentPadding: EdgeInsets.only(bottom: 3, top: 11.35, right: 17,left:20),
+                                  contentPadding: EdgeInsets.only(bottom: 0.0039* MediaQuery.of(context).size.height, top: 0.01135* MediaQuery.of(context).size.height, right: 0.017* MediaQuery.of(context).size.height,left:0.020* MediaQuery.of(context).size.height),
                                   hintStyle: TextStyle(
                                     fontFamily: 'Poppins',
                                       fontSize: 16,
@@ -278,20 +302,20 @@ class _FirstpageState extends State<Firstpage> {
 
 //flatbutton
                         Padding(
-                          padding: EdgeInsets.only(top: 16, left: 26, right: 26,),
+                          padding: EdgeInsets.only(top: 0.016 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height, right: 0.026 * MediaQuery.of(context).size.height,),
                           child: FlatButton(
                             color: Colors.green[700],//: Color.fromRGBO(158,158,158,1),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
+                              borderRadius: BorderRadius.circular(0.005 * MediaQuery.of(context).size.height),
                             ),
-                            height: 41,
+                            height: 0.041 * MediaQuery.of(context).size.height,
                             minWidth: double.infinity,
                             child: Text(
                               'Submit',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w600,
-                                fontSize: 16,
+                                fontSize: 16 ,
                                 color: Color.fromRGBO(255,255,255,1),
                                 decoration: TextDecoration.underline,
                               ),
@@ -304,45 +328,282 @@ class _FirstpageState extends State<Firstpage> {
 
 
                          //bottom text
-                         Row(
-                           crossAxisAlignment: CrossAxisAlignment.center,
-                           mainAxisAlignment: MainAxisAlignment.center,
-                           children: [
-                             Padding(
-                               padding: const EdgeInsets.only(top: 10.0,left: 26,bottom: 15),
-                               child: Text(
-                                 'Don\'t have an account ?',
-                                 style: GoogleFonts.openSans(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16,
-                                    fontStyle: FontStyle.normal,
-                                    color: Color.fromRGBO(0,0,0,1),
-                                    letterSpacing: 0.3,
-                                  ),
-                               ),
-                             ),
-                             Padding(
-                               padding: const EdgeInsets.only(top: 10.0,bottom: 15,left: 12),
-                               child: Container(
-                                 height: 25,
-                                 child: FlatButton(
-                                   color: Colors.green[50],
-                                   child: Text(
-                                     'SignUp',
-                                    style: GoogleFonts.openSans(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14,
-                                    fontStyle: FontStyle.normal,
-                                    color: Color.fromRGBO(0,0,0,1),
-                                    letterSpacing: 1.24,
-                                  ),),
-                                   onPressed: () {
-                                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => FarmerSignup()));
-                                   },
+                         Padding(
+                           padding: EdgeInsets.only(bottom: 0.010 * MediaQuery.of(context).size.height,),
+                           child: Row(
+                             crossAxisAlignment: CrossAxisAlignment.center,
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: [
+                               Padding(
+                                 padding: EdgeInsets.only(top: 0.010 * MediaQuery.of(context).size.height,left: 0.026 * MediaQuery.of(context).size.height,bottom: 0.015 * MediaQuery.of(context).size.height),
+                                 child: Text(
+                                   'Don\'t have an account ?',
+                                   style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16,
+                                      fontStyle: FontStyle.normal,
+                                      color: Color.fromRGBO(0,0,0,1),
+                                      letterSpacing: 0.3,
+                                    ),
                                  ),
                                ),
-                             )
-                           ],
+                               Padding(
+                                 padding: EdgeInsets.only(top: 0.010 * MediaQuery.of(context).size.height,bottom: 0.015 * MediaQuery.of(context).size.height,left: 0.012 * MediaQuery.of(context).size.height),
+                                 child: Container(
+                                   height: 0.029 * MediaQuery.of(context).size.height,
+                                   child: FlatButton(
+                                     color: Colors.green[50],
+                                     child: Text(
+                                       'SignUp',
+                                      style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14,
+                                      fontStyle: FontStyle.normal,
+                                      color: Color.fromRGBO(0,0,0,1),
+                                      letterSpacing: 1.24,
+                                    ),),
+                                     onPressed: () {
+                                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => FarmerSignup()));
+                                     },
+                                   ),
+                                 ),
+                               )
+                             ],
+                           ),
+                         ), 
+                    ],
+                  ),
+                ),
+              ),
+                
+             
+              ],
+            ),
+        );
+      });
+  }
+
+  @override
+  void showModalSheetV (){
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(0.020 * MediaQuery.of(context).size.height), 
+          topRight: Radius.circular(0.020 * MediaQuery.of(context).size.height),                                       
+        ),
+      ),
+      isScrollControlled: true,
+      backgroundColor: Colors.white,
+      builder: (builder) { 
+        return SingleChildScrollView(
+          child: Stack(
+              overflow: Overflow.visible,
+              children: [
+
+              //Dismiss Button For BottomSheet
+              Positioned(
+                right: 0.41,
+                top: -38.59,
+                child: Padding(
+                  padding: EdgeInsets.only(right:0.008 * MediaQuery.of(context).size.height,),
+                  child: Container(
+                    alignment: Alignment.centerRight,
+                    height: 0.029 * MediaQuery.of(context).size.height,
+                    width: 0.028 * MediaQuery.of(context).size.height,
+                    child: FloatingActionButton(
+                      backgroundColor: Color.fromRGBO(255,255,255,1),
+                      child: Padding(
+                        padding: EdgeInsets.all(0.003 * MediaQuery.of(context).size.height),
+                        child: Icon(Icons.close_sharp,color: Color.fromRGBO(0,0,0,1),size: 0.015 * MediaQuery.of(context).size.height,),
+                      ),
+                      onPressed: (){
+                        Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Firstpage()));
+                      },
+                    ),
+                  ),
+                ),
+              ),
+
+              //bottomsheet items
+              Padding(
+                padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                child: Container(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                             
+                      //text
+                      Padding(
+                        padding: EdgeInsets.only(top: 0.030 * MediaQuery.of(context).size.height, left: 0.076 * MediaQuery.of(context).size.height, right: 0.074 * MediaQuery.of(context).size.height,),
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 0.026 * MediaQuery.of(context).size.height,
+                            width: double.infinity,
+                              child: Text(
+                                'Farm Visit Login', 
+                                style: GoogleFonts.openSans(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 15,
+                                  fontStyle: FontStyle.normal,
+                                  color: Color.fromRGBO(0,0,0,1),
+                                  letterSpacing: 0.00124 * MediaQuery.of(context).size.height,
+                                ),
+                              ),
+                          ),
+                        ),
+
+                        //Textfield
+                        //phone number add
+                        Focus(
+                          onFocusChange: (hasFocus) {
+                            setState(() {
+                              //isTextFiledFocus = hasFocus;
+                            });
+                          },
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 0.024 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height,right:0.025 * MediaQuery.of(context).size.height,),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxHeight: 0.046 * MediaQuery.of(context).size.height,
+                                ),
+                                child: TextField(
+                                textInputAction: TextInputAction.next,
+                                maxLines: 1,
+                                maxLength: 10,
+                                decoration: InputDecoration(
+                                  counterText: '',
+                                  focusedBorder: OutlineInputBorder(
+                                     borderSide: BorderSide(color: Colors.yellow[800], width: 2.0),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.yellow[800], width: 2.0),
+                                  ),
+                                  border: InputBorder.none,
+                                  hintText: 'Enter Phone Number/Name',
+                                  contentPadding: EdgeInsets.only(bottom: 0.0039* MediaQuery.of(context).size.height, top: 0.01135* MediaQuery.of(context).size.height, right: 0.017* MediaQuery.of(context).size.height,left:0.020* MediaQuery.of(context).size.height),
+                                  hintStyle: GoogleFonts.roboto(
+                                      fontSize: 16,
+                                    color: Color.fromRGBO(146,146,146,1),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.phone,
+                                ),
+                              ),
+                          ),
+                        ),
+
+                        Focus(
+                          onFocusChange: (hasFocus) {
+                            setState(() {
+                              //isTextFiledFocus = hasFocus;
+                            });
+                          },
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 0.010 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height,right:0.025 * MediaQuery.of(context).size.height,),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxHeight: 0.046 * MediaQuery.of(context).size.height,
+                                ),
+                                child: TextField(
+                                textInputAction: TextInputAction.next,
+                                maxLines: 1,
+                                maxLength: 10,
+                                decoration: InputDecoration(
+                                  counterText: '',
+                                  focusedBorder: OutlineInputBorder(
+                                     borderSide: BorderSide(color: Colors.redAccent[700], width: 2.0),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.redAccent[700], width: 2.0),
+                                  ),
+                                  border: InputBorder.none,
+                                  hintText: 'Enter Password',
+                                  contentPadding: EdgeInsets.only(bottom: 0.0039* MediaQuery.of(context).size.height, top: 0.01135* MediaQuery.of(context).size.height, right: 0.017* MediaQuery.of(context).size.height,left:0.020* MediaQuery.of(context).size.height),
+                                  hintStyle: TextStyle(
+                                    fontFamily: 'Poppins',
+                                      fontSize: 16,
+                                    color: Color.fromRGBO(146,146,146,1),
+                                  ),
+                                ),
+                                keyboardType: TextInputType.phone,
+                                ),
+                              ),
+                          ),
+                        ),
+                                    
+
+//flatbutton
+                        Padding(
+                          padding: EdgeInsets.only(top: 0.016 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height, right: 0.026 * MediaQuery.of(context).size.height,),
+                          child: FlatButton(
+                            color: Colors.redAccent[700],//: Color.fromRGBO(158,158,158,1),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0.005 * MediaQuery.of(context).size.height),
+                            ),
+                            height: 0.041 * MediaQuery.of(context).size.height,
+                            minWidth: double.infinity,
+                            child: Text(
+                              'Submit',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.roboto(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16 ,
+                                color: Color.fromRGBO(255,255,255,1),
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => FarmVisitHome()));
+                            },
+                          ),
+                        ),
+
+
+                         //bottom text
+                         Padding(
+                           padding: EdgeInsets.only(bottom: 0.010 * MediaQuery.of(context).size.height,),
+                           child: Row(
+                             crossAxisAlignment: CrossAxisAlignment.center,
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: [
+                               Padding(
+                                 padding: EdgeInsets.only(top: 0.010 * MediaQuery.of(context).size.height,left: 0.026 * MediaQuery.of(context).size.height,bottom: 0.015 * MediaQuery.of(context).size.height),
+                                 child: Text(
+                                   'Don\'t have an account ?',
+                                   style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16,
+                                      fontStyle: FontStyle.normal,
+                                      color: Color.fromRGBO(0,0,0,1),
+                                      letterSpacing: 0.3,
+                                    ),
+                                 ),
+                               ),
+                               Padding(
+                                 padding: EdgeInsets.only(top: 0.010 * MediaQuery.of(context).size.height,bottom: 0.015 * MediaQuery.of(context).size.height,left: 0.012 * MediaQuery.of(context).size.height),
+                                 child: Container(
+                                   height: 0.029 * MediaQuery.of(context).size.height,
+                                   child: FlatButton(
+                                     color: Colors.green[50],
+                                     child: Text(
+                                       'SignUp',
+                                      style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14,
+                                      fontStyle: FontStyle.normal,
+                                      color: Color.fromRGBO(0,0,0,1),
+                                      letterSpacing: 1.24,
+                                    ),),
+                                     onPressed: () {
+                                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => FarmerSignup()));
+                                     },
+                                   ),
+                                 ),
+                               )
+                             ],
+                           ),
                          ), 
                     ],
                   ),
@@ -363,8 +624,8 @@ class _FirstpageState extends State<Firstpage> {
       context: context,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20), 
-          topRight: Radius.circular(20),                                       
+          topLeft: Radius.circular(0.020 * MediaQuery.of(context).size.height), 
+          topRight: Radius.circular(0.020 * MediaQuery.of(context).size.height),                                       
         ),
       ),
       isScrollControlled: true,
@@ -407,25 +668,22 @@ class _FirstpageState extends State<Firstpage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-
-                      //images scroller
-                        //Imagesc(),
                              
                       //text
                       Padding(
-                        padding: const EdgeInsets.only(top: 30.0, left: 76, right: 74,),
+                        padding: EdgeInsets.only(top: 0.030 * MediaQuery.of(context).size.height, left: 0.076 * MediaQuery.of(context).size.height, right: 0.074 * MediaQuery.of(context).size.height,),
                           child: Container(
                             alignment: Alignment.center,
-                            height: 24,
+                            height: 0.026 * MediaQuery.of(context).size.height,
                             width: double.infinity,
                               child: Text(
                                 'Trader Login', 
                                 style: GoogleFonts.openSans(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 16,
+                                  fontSize: 15,
                                   fontStyle: FontStyle.normal,
                                   color: Color.fromRGBO(0,0,0,1),
-                                  letterSpacing: 2.24,
+                                  letterSpacing: 0.00124 * MediaQuery.of(context).size.height,
                                 ),
                               ),
                           ),
@@ -440,10 +698,10 @@ class _FirstpageState extends State<Firstpage> {
                             });
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(top: 24, left: 26,right:25,),
+                            padding: EdgeInsets.only(top: 0.024 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height,right:0.025 * MediaQuery.of(context).size.height,),
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(
-                                  maxHeight: 46.0,
+                                  maxHeight: 0.046 * MediaQuery.of(context).size.height,
                                 ),
                                 child: TextField(
                                 textInputAction: TextInputAction.next,
@@ -478,10 +736,10 @@ class _FirstpageState extends State<Firstpage> {
                             });
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(top: 12, left: 26,right:25,),
+                            padding: EdgeInsets.only(top: 0.012 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height,right: 0.025 * MediaQuery.of(context).size.height,),
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(
-                                  maxHeight: 46.0,
+                                  maxHeight: 0.046 * MediaQuery.of(context).size.height,
                                 ),
                                 child: TextField(
                                 textInputAction: TextInputAction.next,
@@ -512,13 +770,13 @@ class _FirstpageState extends State<Firstpage> {
 
 //flatbutton
                         Padding(
-                          padding: EdgeInsets.only(top: 16, left: 26, right: 26,),
+                          padding: EdgeInsets.only(top: 0.016 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height, right: 0.026 * MediaQuery.of(context).size.height,),
                           child: FlatButton(
                             color: Colors.cyan[800],//: Color.fromRGBO(158,158,158,1),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
                             ),
-                            height: 41,
+                            height: 0.041 * MediaQuery.of(context).size.height,
                             minWidth: double.infinity,
                             child: Text(
                               'Submit',
@@ -537,46 +795,49 @@ class _FirstpageState extends State<Firstpage> {
                         ),
 
                         //bottom text
-                        Row(
-                           crossAxisAlignment: CrossAxisAlignment.center,
-                           mainAxisAlignment: MainAxisAlignment.center,
-                           children: [
-                             Padding(
-                               padding: const EdgeInsets.only(top: 10.0,left: 26,bottom: 15),
-                               child: Text(
-                                 'Don\'t have an account ?',
-                                 style: GoogleFonts.openSans(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16,
-                                    fontStyle: FontStyle.normal,
-                                    color: Color.fromRGBO(0,0,0,1),
-                                    letterSpacing: 0.3,
-                                  ),
-                               ),
-                             ),
-                             Padding(
-                               padding: const EdgeInsets.only(top: 10.0,bottom: 15,left: 12),
-                               child: Container(
-                                 height: 25,
-                                 child: FlatButton(
-                                   color: Colors.cyan[50],
-                                   child: Text(
-                                     'SignUp',
-                                    style: GoogleFonts.openSans(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14,
-                                    fontStyle: FontStyle.normal,
-                                    color: Color.fromRGBO(0,0,0,1),
-                                    letterSpacing: 1.24,
-                                  ),),
-                                   onPressed: () {
-                                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => TraderSignup()));
-                                   },
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 0.010 * MediaQuery.of(context).size.height,),
+                          child: Row(
+                             crossAxisAlignment: CrossAxisAlignment.center,
+                             mainAxisAlignment: MainAxisAlignment.center,
+                             children: [
+                               Padding(
+                                 padding: EdgeInsets.only(top: 0.010 * MediaQuery.of(context).size.height,left: 0.026 * MediaQuery.of(context).size.height,bottom: 0.015 * MediaQuery.of(context).size.height),
+                                 child: Text(
+                                   'Don\'t have an account ?',
+                                   style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16,
+                                      fontStyle: FontStyle.normal,
+                                      color: Color.fromRGBO(0,0,0,1),
+                                      letterSpacing: 0.3,
+                                    ),
                                  ),
                                ),
-                             )
-                           ],
-                         ), 
+                               Padding(
+                                 padding: EdgeInsets.only(top: 0.010 * MediaQuery.of(context).size.height,bottom: 0.015 * MediaQuery.of(context).size.height,left: 0.012 * MediaQuery.of(context).size.height),
+                                 child: Container(
+                                   height: 0.029 * MediaQuery.of(context).size.height,
+                                   child: FlatButton(
+                                     color: Colors.cyan[50],
+                                     child: Text(
+                                       'SignUp',
+                                      style: GoogleFonts.openSans(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14,
+                                      fontStyle: FontStyle.normal,
+                                      color: Color.fromRGBO(0,0,0,1),
+                                      letterSpacing: 1.24,
+                                    ),),
+                                     onPressed: () {
+                                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => TraderSignup()));
+                                     },
+                                   ),
+                                 ),
+                               )
+                             ],
+                           ),
+                        ), 
                             
                           ],
                         ),
@@ -597,16 +858,13 @@ class _FirstpageState extends State<Firstpage> {
         //backgroundColor: Colors.lightGreen[50],
         body: Stack(
           children: [
-          Padding(
-            padding: const EdgeInsets.all(0.0),
-            child: Image.asset(
-              "assets/images/loginback.jpg",
-              height: 1000,
-              fit: BoxFit.cover,
-              color: Colors.black12,
-              colorBlendMode: BlendMode.darken,
-              ),
-          ),
+          Image.asset(
+            "assets/images/loginback.jpg",
+            height: 1.000 * MediaQuery.of(context).size.height,
+            fit: BoxFit.cover,
+            color: Colors.black12,
+            colorBlendMode: BlendMode.darken,
+            ),
            Column(
              children: [
                 Padding(

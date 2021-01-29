@@ -15,7 +15,7 @@ class _TraditionalCropsState extends State<TraditionalCrops> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Traditional Crops'),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.cyan[900],
       ),
       body: Container(
         child: Column(
@@ -24,7 +24,7 @@ class _TraditionalCropsState extends State<TraditionalCrops> {
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
-                childAspectRatio: 0.85,
+                childAspectRatio: 0.00096 * MediaQuery.of(context).size.height,
                 children: [
                 CropCard(
                   title: 'Desert Lime',

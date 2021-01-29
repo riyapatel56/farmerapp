@@ -1,5 +1,4 @@
 import 'package:farmer/customer/drawer/list.dart';
-import 'package:farmer/farmerpart/drawerscreen/buyerlist.dart';
 import 'package:flutter/material.dart';
 
 class Lime extends StatefulWidget {
@@ -65,7 +64,7 @@ class _LimeState extends State<Lime> {
               color: Colors.green,
               child: Text('       Buyer Is Buying      ',style: TextStyle(color: Colors.white,fontSize: 18),),
               onPressed: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Buyer()));
+                //Navigator.of(context).push(MaterialPageRoute(builder: (context) => ScBuyerList()));
               },
             ),
           ],

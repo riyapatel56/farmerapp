@@ -32,7 +32,7 @@ class AllTraders extends StatelessWidget {
       physics: ScrollPhysics(),
       shrinkWrap: true,
       itemCount: trds.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 1.8999),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 0.002255 * MediaQuery.of(context).size.height),
       itemBuilder: (context, i) => ChangeNotifierProvider.value(value: trds[i],
       child: TrdItem(
         name: trds[i].name,
@@ -73,11 +73,11 @@ class TrdItem extends StatelessWidget {
         //Navigator.of(context).pushNamed(DetailPage.routeName,arguments: pdt.id);
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(0.01 * MediaQuery.of(context).size.height),
         child: Container(
-          height: 100,
+          height: 0.100 * MediaQuery.of(context).size.height,
           child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(0.008 * MediaQuery.of(context).size.height),
               child: Container(
                 height: 0.195 * MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(color: Colors.white,boxShadow: [BoxShadow(color: Colors.grey,blurRadius: 7,offset: Offset(2.0,2.0))]),
@@ -92,20 +92,20 @@ class TrdItem extends StatelessWidget {
                     ),
                     ListTile(
                       leading: Padding(
-                        padding: const EdgeInsets.only(top:10.0),
+                        padding: EdgeInsets.only(top: 0.01 * MediaQuery.of(context).size.height),
                         child: Container(
-                          height: 40,
+                          height: 0.05 * MediaQuery.of(context).size.height,
                           decoration: BoxDecoration(shape: BoxShape.circle),
                           child: Image.asset(imageUrl),
                         ),
                       ),
                       title: Padding(
-                        padding: const EdgeInsets.only(top:10.0,right: 110,bottom: 5),
+                        padding: EdgeInsets.only(top: 0.01 * MediaQuery.of(context).size.height,right: 0.110 * MediaQuery.of(context).size.height,bottom: 0.005 * MediaQuery.of(context).size.height),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(right: 25.0),
+                              padding: EdgeInsets.only(right: 0.025 * MediaQuery.of(context).size.height),
                               child: Text(name,style: GoogleFonts.roboto(color: Colors.black,fontSize: 16,fontWeight: FontWeight.w500),textAlign: TextAlign.start,),
                             ),
                             SizedBox(height: 5,),
@@ -114,11 +114,11 @@ class TrdItem extends StatelessWidget {
                               child: Text(buy,style: GoogleFonts.roboto(fontSize: 14,color: Colors.black54),textAlign: TextAlign.start,),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(right: 30.0,),
+                              padding: EdgeInsets.only(right: 0.03 * MediaQuery.of(context).size.height),
                               child: Text('Trading Since $since',style: GoogleFonts.roboto(fontSize: 14,color: Colors.black54),textAlign: TextAlign.start,),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(right: 30.0,bottom: 5),
+                              padding: EdgeInsets.only(right: 0.03 * MediaQuery.of(context).size.height,bottom: 0.005 * MediaQuery.of(context).size.height),
                               child: Text(address,style: GoogleFonts.roboto(fontSize: 14,color: Colors.black54),textAlign: TextAlign.start,),
                             ),
                             Row(
@@ -126,9 +126,9 @@ class TrdItem extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(Icons.star_rate,size: 20,color: Colors.black54,),
-                                SizedBox(width: 5,),
+                                SizedBox(width: 0.005 * MediaQuery.of(context).size.height,),
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 30.0),
+                                  padding: EdgeInsets.only(right: 0.03 * MediaQuery.of(context).size.height),
                                   child: Text(rating,style: GoogleFonts.roboto(fontSize: 14,color: Colors.black54),textAlign: TextAlign.start,),
                                 ),
                               ],
@@ -151,7 +151,7 @@ class TrdItem extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.00,top: MediaQuery.of(context).size.height * 0.00),
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.00),
                       child: Row(
                         children: [
                           
@@ -159,7 +159,7 @@ class TrdItem extends StatelessWidget {
                             padding: EdgeInsets.only(left: MediaQuery.of(context).size.height * 0.0),
                             child: Container(
                               alignment: Alignment.centerLeft,
-                              height: MediaQuery.of(context).size.height * 0.059,
+                              height:  0.0695 * MediaQuery.of(context).size.height,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 boxShadow: [BoxShadow(
@@ -176,7 +176,7 @@ class TrdItem extends StatelessWidget {
                           SizedBox(width: 10,),
                           Container(
                             alignment: Alignment.centerRight,
-                              height: MediaQuery.of(context).size.height * 0.059,
+                              height: 0.0695 * MediaQuery.of(context).size.height,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 boxShadow: [BoxShadow(
@@ -193,7 +193,7 @@ class TrdItem extends StatelessWidget {
                           Expanded(
                             child: Container(
                               alignment: Alignment.center,
-                              height: MediaQuery.of(context).size.height * 0.059,
+                              height: 0.059 * MediaQuery.of(context).size.height,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                               ),
@@ -207,7 +207,7 @@ class TrdItem extends StatelessWidget {
                                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
                                       elevation: 16,
                                         child: Container(
-                                          height: 0.570 * MediaQuery.of(context).size.height,
+                                          height: 0.620 * MediaQuery.of(context).size.height,
                                           width: 0.400 * MediaQuery.of(context).size.width,
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -229,7 +229,7 @@ class TrdItem extends StatelessWidget {
                                                 ),
                                               ),
                                               Padding(
-                      padding: const EdgeInsets.only(top: 8.0,left: 12),
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.008,left: MediaQuery.of(context).size.height * 0.012),
                       child: Text(
                         'Name',
                         style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
@@ -237,7 +237,7 @@ class TrdItem extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 2.0,left: 12),
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height *0.002,left: MediaQuery.of(context).size.height * 0.012),
                       child: Text(
                         name,
                         style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
@@ -245,39 +245,7 @@ class TrdItem extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 8.0,left: 12),
-                      child: Text(
-                        'Mobile Number',
-                        style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 2.0,left: 12),
-                      child: Text(
-                        phone,
-                        style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0,left: 12),
-                      child: Text(
-                        'Mail ID',
-                        style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 2.0,left: 12),
-                      child: Text(
-                        mail,
-                        style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0,left: 12),
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.008,left: MediaQuery.of(context).size.height * 0.012),
                       child: Text(
                         'Item Bought',
                         style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
@@ -285,31 +253,18 @@ class TrdItem extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 2.0,left: 12),
-                      child: Text(
-                        buy,
-                        style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                        textAlign: TextAlign.start,
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height *0.002,left: MediaQuery.of(context).size.height * 0.012,right: MediaQuery.of(context).size.height * 0.012),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height *0.03,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                        ),
+                        child: TextField(
+                        ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 8.0,left: 12),
-                      child: Text(
-                        'From',
-                        style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 2.0,left: 12),
-                      child: Text(
-                        address,
-                        style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0,left: 12),
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.008,left: MediaQuery.of(context).size.height * 0.012),
                       child: Text(
                         'Total Amount',
                         style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
@@ -317,22 +272,77 @@ class TrdItem extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 2.0,left: 12),
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height *0.002,left: MediaQuery.of(context).size.height * 0.012,right: MediaQuery.of(context).size.height * 0.012),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height *0.03,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                        ),
+                        child: TextField(
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.008,left: MediaQuery.of(context).size.height * 0.012),
                       child: Text(
-                        '25000',
+                        'Mobile Number',
+                        style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height *0.002,left: MediaQuery.of(context).size.height * 0.012),
+                      child: Text(
+                        phone,
                         style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
                         textAlign: TextAlign.start,
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02,left: MediaQuery.of(context).size.height * 0.058),
-                      child: FlatButton(
-                        color: Colors.purple,
-                        onPressed: () {},
-                        child: Text(
-                          'Request For Payment',
-                          style: GoogleFonts.roboto(
-                            color: Colors.white,
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.008,left: MediaQuery.of(context).size.height * 0.012),
+                      child: Text(
+                        'Mail ID',
+                        style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height *0.002,left: MediaQuery.of(context).size.height * 0.012),
+                      child: Text(
+                        mail,
+                        style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    
+                    Padding(
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.008,left: MediaQuery.of(context).size.height * 0.012),
+                      child: Text(
+                        'From',
+                        style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: MediaQuery.of(context).size.height *0.002,left: MediaQuery.of(context).size.height * 0.012),
+                      child: Text(
+                        address,
+                        style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.06,left: MediaQuery.of(context).size.height * 0.058,bottom: MediaQuery.of(context).size.height * 0.058),
+                        child: FlatButton(
+                          color: Colors.purple,
+                          onPressed: () {},
+                          child: Text(
+                            'Request For Payment',
+                            style: GoogleFonts.roboto(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),

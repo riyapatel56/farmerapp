@@ -43,7 +43,7 @@ class _OrganicCropState extends State<OrganicCrop> {
                   ),
                   CropCard(
                     title: 'Cotton',
-                    image: "assets/images/cot.jpg",
+                    image: "assets/images/cotton.jpg",
                     press: () {
                     },
                     page: Cotton(),

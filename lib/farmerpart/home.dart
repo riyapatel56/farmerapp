@@ -1,9 +1,11 @@
 import 'package:farmer/farmerpart/article/article.dart';
-import 'package:farmer/farmerpart/drawerscreen/buyerlist.dart';
 import 'package:farmer/farmerpart/drawerscreen/profileshow.dart';
 import 'package:farmer/farmerpart/editcrops/homebody.dart';
 import 'package:farmer/farmerpart/farmerselectedcrops/fscmainpage.dart';
+import 'package:farmer/farmerpart/farmsbook/fmhome.dart';
 import 'package:farmer/farmerpart/generatebill/generatebillhome.dart';
+import 'package:farmer/farmerpart/otherhelp/homeotherhelp.dart';
+import 'package:farmer/farmerpart/scbuyerlist/scbdetailpage.dart';
 import 'package:farmer/farmerpart/shopping/mainscreen.dart';
 import 'package:farmer/logsign.dart';
 import 'package:flutter/material.dart';
@@ -34,27 +36,26 @@ class _FarmerHomeState extends State<FarmerHome> {
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeBody()));
               },
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(right: MediaQuery.of(context).size.height * 0.003),
-                    child: Text(
-                      'Edit',
-                      style: GoogleFonts.roboto(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 0.7,
-                      ),
-                    ),
+              child: Padding(
+                padding: EdgeInsets.only(right: MediaQuery.of(context).size.height * 0.0001),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.edit_rounded,color: Colors.white,size: 27,),
+                    Padding(
+                padding: EdgeInsets.only(right: MediaQuery.of(context).size.height * 0.003),
+                child: Text(
+                  'Change Crop',
+                  style: GoogleFonts.roboto(
+                    color: Colors.white,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 0.2,
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(right: MediaQuery.of(context).size.height * 0.0001),
-                    child: Icon(Icons.edit_rounded,color: Colors.white,size: 20,),
-                  ),
-                ],
+                ),
+              ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -136,7 +137,7 @@ class _FarmerHomeState extends State<FarmerHome> {
                   leading: Icon(Icons.list,size: 25,),
                   title: Text('List Of Buyer',style: GoogleFonts.openSans(fontSize: 18),),
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Buyer()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ScbDetailPage()));
                   },
                 ),
               ),
@@ -176,6 +177,32 @@ class _FarmerHomeState extends State<FarmerHome> {
                   title: Text('Article',style: GoogleFonts.openSans(fontSize: 18),),
                   onTap: (){
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => Article()));
+                  },
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(color: Colors.white,boxShadow: [BoxShadow(color: Colors.grey,blurRadius: 7,offset: Offset(2.0,2.0))]),
+                child: ListTile(
+                  leading: Icon(Icons.money,size: 25,),
+                  title: Text('Farmsbook',style: GoogleFonts.openSans(fontSize: 18),),
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => FmHome()));
+                  },
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(color: Colors.white,boxShadow: [BoxShadow(color: Colors.grey,blurRadius: 7,offset: Offset(2.0,2.0))]),
+                child: ListTile(
+                  leading: Icon(Icons.help,size: 25,),
+                  title: Text('Other Help',style: GoogleFonts.openSans(fontSize: 18),),
+                  onTap: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => OtherHelpHome()));
                   },
                 ),
               ),

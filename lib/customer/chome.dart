@@ -1,5 +1,4 @@
 
-import 'package:farmer/customer/farmsbook/fmhome.dart';
 import 'package:farmer/customer/home/traderhome.dart';
 import 'package:farmer/customer/profile/prf.dart';
 import 'package:farmer/customer/purchasingbill/purchasingbill.dart';
@@ -131,19 +130,7 @@ class _ThomeState extends State<Thome> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                decoration: BoxDecoration(color: Colors.white,boxShadow: [BoxShadow(color: Colors.grey,blurRadius: 7,offset: Offset(2.0,2.0))]),
-                child: ListTile(
-                  leading: Icon(Icons.money,size: 25,),
-                  title: Text('Farmsbook',style: GoogleFonts.openSans(fontSize: 18),),
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => FmHome()));
-                  },
-                ),
-              ),
-            ),
+            
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(

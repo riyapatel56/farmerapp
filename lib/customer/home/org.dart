@@ -16,7 +16,7 @@ class _OrganicCropsState extends State<OrganicCrops> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Organic Crops'),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.cyan[900],
       ),
       body: Container(
         child: Column(
@@ -25,7 +25,7 @@ class _OrganicCropsState extends State<OrganicCrops> {
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
-                childAspectRatio: 0.85,
+                childAspectRatio: 0.00096 * MediaQuery.of(context).size.height,
                 children: [
                   CropCard(
                     title: 'Coffee',
@@ -43,7 +43,7 @@ class _OrganicCropsState extends State<OrganicCrops> {
                   ),
                   CropCard(
                     title: 'Cotton',
-                    image: "assets/images/cot.jpg",
+                    image: "assets/images/cotton.jpg",
                     press: () {
                     },
                     page: CCotton(),

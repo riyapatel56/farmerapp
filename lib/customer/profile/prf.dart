@@ -29,16 +29,16 @@ class _TraderProfileScreenState extends State<TraderProfileScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 200,
-                      decoration: BoxDecoration(
-                        color: Colors.purple[50],
-                        border: Border.all(color: Colors.purple),
-                        shape: BoxShape.rectangle,
-                        image: DecorationImage(image: AssetImage('assets/images/p1.jpg'))
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0,left: 140),
+                  height: 0.300 * MediaQuery.of(context).size.height,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    border: Border.all(color: Colors.black),
+                    shape: BoxShape.rectangle,
+                    image: DecorationImage(image: AssetImage('assets/images/p1.jpg'),fit: BoxFit.fill)
+                  ),
+                ),
+                    Container(
+                      alignment: Alignment.center,
                       child: Text(
                         'Information',
                         style: GoogleFonts.openSans(fontSize: 22,fontWeight: FontWeight.w600,letterSpacing: 1),
@@ -125,7 +125,7 @@ class _TraderProfileScreenState extends State<TraderProfileScreen> {
                         textAlign: TextAlign.start,
                       ),
                     ),
-                    Padding(
+                    /*Padding(
                       padding: const EdgeInsets.only(top: 8.0,left: 12),
                       child: Text(
                         'Acres of Land ',
@@ -140,7 +140,7 @@ class _TraderProfileScreenState extends State<TraderProfileScreen> {
                         style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
                         textAlign: TextAlign.start,
                       ),
-                    ),
+                    ),*/
                   ],
                 ),
               ),

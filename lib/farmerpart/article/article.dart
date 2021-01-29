@@ -21,7 +21,7 @@ class Article extends StatelessWidget {
       physics: ScrollPhysics(),
       shrinkWrap: true,
       itemCount: arts.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 0.62),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 0.00074 * MediaQuery.of(context).size.height),
       itemBuilder: (context, i) => ChangeNotifierProvider.value(value: arts[i],
       child: ArtItem(
         title: arts[i].title,
@@ -47,89 +47,80 @@ class ArtItem extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Padding(
+      padding: const EdgeInsets.all(25.0),
+      child: Container(
+        //height: 0.600  * MediaQuery.of(context).size.height,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [BoxShadow(
+            blurRadius: 3,
+            offset: Offset(0, 0.72),
+            color: Colors.grey,
+          )],
+        ),
         child: Column(
           children: [
 
-            //1 container
+            //title
             Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: Container(
-                height: 600,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [BoxShadow(
-                    blurRadius: 3,
-                    offset: Offset(0, 0.72),
-                    color: Colors.grey,
-                  )],
+              padding: const EdgeInsets.only(top: 28.0,bottom: 14),
+              child: Text(
+                title,
+                style: GoogleFonts.poppins(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w500,
                 ),
-                child: Column(
-                  children: [
+                textAlign: TextAlign.center,
+              ),
+            ),
 
-                    //title
-                    Padding(
-                      padding: const EdgeInsets.only(top: 28.0),
-                      child: Text(
-                        title,
-                        style: GoogleFonts.poppins(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w500,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-
-                    //image
-                    Padding(
-                      padding: const EdgeInsets.only(top: 28.0),
-                      child: Container(
-                        height: 150,
-                        width: double.infinity,
-                        child: Image.asset(
-                          imgUrl,
-                        ),
-                      ),
-                    ),
-
-                    //text
-                    Padding(
-                      padding: const EdgeInsets.only(top: 28.0,left: 10,bottom: 10,right: 10),
-                      child: Text(
-                        description,
-                        style: GoogleFonts.poppins(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.only(top: 12.0,bottom: 5),
-                      child: Container(
-                        color: Colors.purple,
-                        child: FlatButton(
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Article1()));
-                          },
-                          child: Text(
-                            'Continue Reading',
-                            style: GoogleFonts.poppins(color: Colors.white),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+            //image
+            Padding(
+              padding: const EdgeInsets.only(top: 0.0),
+              child: Container(
+                height: 150,
+                width: double.infinity,
+                child: Image.asset(
+                  imgUrl,
                 ),
               ),
             ),
 
-            
+            //text
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 28.0,left: 10,bottom: 10,right: 10),
+                child: Text(
+                  description,
+                  style: GoogleFonts.poppins(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
 
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0,bottom: 25),
+              child: Container(
+                color: Colors.purple,
+                child: FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Article1()));
+                  },
+                  child: Text(
+                    'Continue Reading',
+                    style: GoogleFonts.poppins(color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
+      ),
     );
   }
 }
