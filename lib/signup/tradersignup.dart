@@ -1,4 +1,5 @@
 
+import 'package:farmer/customer/chome.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,14 +12,8 @@ class _TraderSignupState extends State<TraderSignup> {
    TextEditingController name = TextEditingController();
   TextEditingController emailid = TextEditingController();
   TextEditingController mobile = TextEditingController();
-  TextEditingController flatno = TextEditingController();
-  TextEditingController area = TextEditingController();
-  TextEditingController landmark = TextEditingController();
-  TextEditingController town = TextEditingController();
-  TextEditingController pincode = TextEditingController();
   TextEditingController state = TextEditingController();
-  TextEditingController blood = TextEditingController();
-  TextEditingController ngo = TextEditingController();
+  TextEditingController password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -174,7 +169,7 @@ class _TraderSignupState extends State<TraderSignup> {
                             ),
                           ],
                         )),
-                    Padding(
+                    /*Padding(
                         padding:
                             EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
                         child: new Row(
@@ -364,7 +359,7 @@ class _TraderSignupState extends State<TraderSignup> {
                               flex: 2,
                             ),
                           ],
-                        )),
+                        )),*/
                     // !_status ? _getActionButtons() : new Container(),
                     Padding(
                         padding:
@@ -376,7 +371,7 @@ class _TraderSignupState extends State<TraderSignup> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
-                                new Text('Years Of Experience',
+                                new Text('State',
                                   style: GoogleFonts.openSans(
                                     textStyle: TextStyle(
                                       fontSize: 16.0,
@@ -397,9 +392,9 @@ class _TraderSignupState extends State<TraderSignup> {
                           children: <Widget>[
                             new Flexible(
                               child: new TextField(
-                                controller: town,
+                                controller: state,
                                 decoration: const InputDecoration(
-                                  hintText: "",
+                                  hintText: "Enter State",
                                 ),
                                 enabled: true,
                                 // autofocus: !_status,
@@ -438,7 +433,7 @@ class _TraderSignupState extends State<TraderSignup> {
                           children: <Widget>[
                             new Flexible(
                               child: new TextField(
-                                controller: blood,
+                                controller: password,
                                 decoration: const InputDecoration(
                                   hintText: "",
                                 ),
@@ -479,7 +474,7 @@ class _TraderSignupState extends State<TraderSignup> {
                           children: <Widget>[
                             new Flexible(
                               child: new TextField(
-                                controller: blood,
+                                controller: password,
                                 decoration: const InputDecoration(
                                   hintText: "",
                                 ),
@@ -526,7 +521,9 @@ class _TraderSignupState extends State<TraderSignup> {
                         child: FlatButton(
                           shape: StadiumBorder(),
                           color: Colors.cyan[800],
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Thome()));
+                          },
                           child: Text("Submit Your Details",
                             style: GoogleFonts.poppins(color: Colors.white, fontSize: 18.0)
                           )

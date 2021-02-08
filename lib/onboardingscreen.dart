@@ -139,7 +139,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 0,vertical: 5),
+                padding: EdgeInsets.symmetric(horizontal: 0,vertical: 2),
                 child: Image.asset(image),
               ),
               SizedBox(height: 30,),
@@ -204,9 +204,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
 class Strings {
   static var stepOneTitle = "Welcome To Farmsbook ";
-  static var stepOneContent = "One stop for all solution, Here youu get all kinds of details to grow your crops better, faster and smoother";
+  static var stepOneContent = "One stop for all solution, Here you get all kinds of details to grow your crops and Discover Better Buyer For Crop,";
   static var stepTwoTitle = "Network";
-  static var stepTwoContent = "Join the growing network of Farmer\'s and Trader\'s";
+  static var stepTwoContent = "Join the growing network of Farmer\'s and Trader\'s, Discovery of Better Buyer For Your Crops";
   static var stepThreeTitle = "Easy Selling And Buying";
-  static var stepThreeContent = "Sell your goods at best price, and buy any goods, on one tap";
+  static var stepThreeContent = "Through ABC Center You Can Sell your goods at best price, and buy any goods, without any hesitation on one tap";
 }
