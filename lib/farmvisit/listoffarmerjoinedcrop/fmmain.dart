@@ -15,7 +15,7 @@ class FvFarmerHome extends StatelessWidget {
       physics: ScrollPhysics(),
       shrinkWrap: true,
       itemCount: fvfs.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: MediaQuery.of(context).size.height * 0.00295),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 2.50),
       itemBuilder: (context, i) => ChangeNotifierProvider.value(value: fvfs[i],
       child: FarmVisitItem(
         name: fvfs[i].name,

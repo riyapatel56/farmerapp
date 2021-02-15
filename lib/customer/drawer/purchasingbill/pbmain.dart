@@ -18,7 +18,7 @@ class PBHome extends StatelessWidget {
       physics: ScrollPhysics(),
       shrinkWrap: true,
       itemCount: pbfs.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: MediaQuery.of(context).size.height * 0.00255),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 2.19),
       itemBuilder: (context, i) => ChangeNotifierProvider.value(value: pbfs[i],
       child: PbFarmerList(
         name: pbfs[i].name,

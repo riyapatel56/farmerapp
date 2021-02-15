@@ -1,3 +1,4 @@
+import 'package:farmer/customer/tabccenter/form/abcform.dart';
 import 'package:farmer/farmerpart/bottomnavbar/abccenter/center.dart';
 import 'package:farmer/farmerpart/bottomnavbar/abccenter/listoffarmersforcenter/fcenterlist.dart';
 import 'package:farmer/farmerpart/drawerscreen/profile/profileshow.dart';
@@ -14,92 +15,7 @@ class CntDetailPage extends StatefulWidget {
 }
 
 class _CntDetailPageState extends State<CntDetailPage> {
-  @override
-  void showModalSheet (){
-    showModalBottomSheet(
-      context: context,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(0.020 * MediaQuery.of(context).size.height), 
-          topRight: Radius.circular(0.020 * MediaQuery.of(context).size.height),                                       
-        ),
-      ),
-      isScrollControlled: true,
-      backgroundColor: Colors.white,
-      builder: (builder) { 
-        return SingleChildScrollView(
-          child: Stack(
-              overflow: Overflow.visible,
-              children: [
-
-              //bottomsheet items
-              Padding(
-                padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: Container(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                             
-                      //text
-                      Padding(
-                        padding: EdgeInsets.only(top: 0.030 * MediaQuery.of(context).size.height, left: 0.016 * MediaQuery.of(context).size.height, right: 0.014 * MediaQuery.of(context).size.height,),
-                          child: Container(
-                            alignment: Alignment.centerLeft,
-                            height: 0.056 * MediaQuery.of(context).size.height,
-                            width: double.infinity,
-                              child: Text(
-                                'Edit Or Check Your Profile \nBefore Applying', 
-                                style: GoogleFonts.openSans(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 15,
-                                  fontStyle: FontStyle.normal,
-                                  color: Color.fromRGBO(0,0,0,1),
-                                  letterSpacing: 0.00124 * MediaQuery.of(context).size.height,
-                                ),
-                              ),
-                          ),
-                        ),        
-
-//flatbutton
-                        Padding(
-                          padding: EdgeInsets.only(top: 0.016 * MediaQuery.of(context).size.height, left: 0.026 * MediaQuery.of(context).size.height, right: 0.026 * MediaQuery.of(context).size.height,),
-                          child: FlatButton(
-                            color: Colors.deepPurple[700],//: Color.fromRGBO(158,158,158,1),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(0.005 * MediaQuery.of(context).size.height),
-                            ),
-                            height: 0.041 * MediaQuery.of(context).size.height,
-                            minWidth: double.infinity,
-                            child: Text(
-                              'Go To Profile',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.roboto(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 16 ,
-                                color: Color.fromRGBO(255,255,255,1),
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfileScreen()));
-                            },
-                          ),
-                        ),
-
-
-                         //bottom text
-                         
-                    ],
-                  ),
-                ),
-              ),
-                
-             
-              ],
-            ),
-        );
-      });
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -399,7 +315,7 @@ class _CntDetailPageState extends State<CntDetailPage> {
                     ),*/
 
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.only(top: 8.0,left: 8, right: 8, bottom: 18),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -440,7 +356,9 @@ class _CntDetailPageState extends State<CntDetailPage> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: FlatButton(
                                   color: Colors.purple[400],
-                                  onPressed: showModalSheet,
+                                  onPressed: () {
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ABCApplyForm()));
+                                  },
                                   child: Text(
                                     'Apply For Membership',
                                     style: GoogleFonts.openSans(fontSize: 16,color: Colors.white),

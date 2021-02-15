@@ -29,6 +29,8 @@ dependencies:
   smooth_star_rating: ^1.1.1
   image_picker: ^0.6.7+21
   curved_navigation_bar: ^0.3.7
+  shared_preferences: ^0.5.12+4
+  after_layout: ^1.0.7+2
 
 
   # The following adds the Cupertino Icons font to your application.

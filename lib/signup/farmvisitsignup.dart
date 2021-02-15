@@ -5,7 +5,7 @@ import 'package:farmer/signup/tradersignup.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FarmVisitSignup extends StatefulWidget {
+/*class FarmVisitSignup extends StatefulWidget {
   @override
   _FarmVisitSignupState createState() => _FarmVisitSignupState();
 }
@@ -353,4 +353,164 @@ class _FarmVisitSignupState extends State<FarmVisitSignup> {
       ),
     );
   }
-}
+}*/
+class FarmVisitSignup extends StatefulWidget { 
+  @override 
+  _FarmVisitSignupState createState() => _FarmVisitSignupState(); 
+} 
+  
+class _FarmVisitSignupState extends State<FarmVisitSignup> { 
+  var _formKey = GlobalKey<FormState>(); 
+  var isLoading = false; 
+  
+  void _submit() { 
+    final isValid = _formKey.currentState.validate(); 
+    if (!isValid) { 
+      return; 
+    } 
+    _formKey.currentState.save(); 
+  } 
+  
+  @override 
+  Widget build(BuildContext context) { 
+    return Scaffold( 
+      appBar: AppBar( 
+        backgroundColor: Colors.redAccent[700],
+        title: Text("FarmVisit SignUp",style: GoogleFonts.openSans(color: Colors.white,fontWeight: FontWeight.w600,letterSpacing: 1.4),),
+      ), 
+      backgroundColor: Colors.red[50],
+      //body 
+      body: SingleChildScrollView(
+        child: Padding( 
+          padding: const EdgeInsets.all(16.0), 
+          //form 
+          child: Form( 
+            key: _formKey, 
+            child: Column( 
+              children: <Widget>[ 
+                //styling 
+                SizedBox( 
+                  height: MediaQuery.of(context).size.width * 0.001, 
+                ),
+                //text input  
+                TextFormField( 
+                  decoration: InputDecoration(labelText: 'Name',labelStyle: GoogleFonts.openSans(color: Colors.black,fontWeight: FontWeight.w600,letterSpacing: 1.2,fontSize: 17),), 
+                  keyboardType: TextInputType.emailAddress, 
+                  onFieldSubmitted: (value) {}, 
+                  //obscureText: true, 
+                  validator: (value) { 
+                    if (value.isEmpty) { 
+                      return 'Enter Name'; 
+                    } 
+                    return null; 
+                  }, 
+                ),
+                
+                SizedBox( 
+                  height: MediaQuery.of(context).size.width * 0.07, 
+                ),  
+                TextFormField( 
+                  decoration: InputDecoration(labelText: 'E-Mail',labelStyle: GoogleFonts.openSans(color: Colors.black,fontWeight: FontWeight.w600,letterSpacing: 1.2,fontSize: 17),),  
+                  keyboardType: TextInputType.emailAddress, 
+                  onFieldSubmitted: (value) { 
+                    //Validator 
+                  }, 
+                  validator: (value) { 
+                    if (value.isEmpty || 
+                        !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+") 
+                            .hasMatch(value)) { 
+                      return 'Enter a valid email!'; 
+                    } 
+                    return null; 
+                  }, 
+                ), 
+                //box styling 
+                SizedBox( 
+                  height: MediaQuery.of(context).size.width * 0.07, 
+                ), 
+                //text input  
+                TextFormField( 
+                  decoration: InputDecoration(labelText: 'Mobile Number',labelStyle: GoogleFonts.openSans(color: Colors.black,fontWeight: FontWeight.w600,letterSpacing: 1.2,fontSize: 17),),  
+                  keyboardType: TextInputType.emailAddress, 
+                  onFieldSubmitted: (value) {}, 
+                  //obscureText: true, 
+                  validator: (value) { 
+                    if (value.isEmpty) { 
+                      return 'Enter a valid mobile number'; 
+                    } 
+                    return null; 
+                  }, 
+                ), 
+                SizedBox( 
+                  height: MediaQuery.of(context).size.width * 0.07, 
+                ), 
+                //text input  
+                TextFormField( 
+                  decoration: InputDecoration(labelText: 'State',labelStyle: GoogleFonts.openSans(color: Colors.black,fontWeight: FontWeight.w600,letterSpacing: 1.2,fontSize: 17),),  
+                  keyboardType: TextInputType.emailAddress, 
+                  onFieldSubmitted: (value) {}, 
+                  //obscureText: true, 
+                  validator: (value) { 
+                    if (value.isEmpty) { 
+                      return 'Enter a valid state'; 
+                    } 
+                    return null; 
+                  }, 
+                ), 
+                SizedBox( 
+                  height: MediaQuery.of(context).size.width * 0.07, 
+                ), 
+                //text input  
+                TextFormField( 
+                  decoration: InputDecoration(labelText: 'Password',labelStyle: GoogleFonts.openSans(color: Colors.black,fontWeight: FontWeight.w600,letterSpacing: 1.2,fontSize: 17),), 
+                  keyboardType: TextInputType.emailAddress, 
+                  onFieldSubmitted: (value) {}, 
+                  obscureText: true, 
+                  validator: (value) { 
+                    if (value.isEmpty) { 
+                      return 'Enter a valid password!'; 
+                    } 
+                    return null; 
+                  }, 
+                ), 
+                SizedBox( 
+                  height: MediaQuery.of(context).size.width * 0.07, 
+                ), 
+                //text input  
+                TextFormField( 
+                  decoration: InputDecoration(labelText: 'Password',labelStyle: GoogleFonts.openSans(color: Colors.black,fontWeight: FontWeight.w600,letterSpacing: 1.2,fontSize: 17),),  
+                  keyboardType: TextInputType.emailAddress, 
+                  onFieldSubmitted: (value) {}, 
+                  obscureText: true, 
+                  validator: (value) { 
+                    if (value.isEmpty) { 
+                      return 'Enter a valid password!'; 
+                    } 
+                    return null; 
+                  }, 
+                ),
+                SizedBox( 
+                  height: MediaQuery.of(context).size.width * 0.07, 
+                ), 
+                RaisedButton( 
+                  color: Colors.redAccent[700],
+                  padding: EdgeInsets.symmetric( 
+                    vertical: 10.0, 
+                    horizontal: 15.0, 
+                  ), 
+                  child: Text( 
+                    "Submit", 
+                    style: GoogleFonts.openSans(color: Colors.white,fontSize: 24,fontWeight: FontWeight.w600,letterSpacing: 1.4),
+                  ), 
+                   onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => FarmVisitHome()));
+                  }, 
+                ) 
+              ], 
+            ), 
+          ), 
+        ),
+      ), 
+    ); 
+  } 
+} 

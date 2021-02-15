@@ -23,7 +23,7 @@ class ABCCenterHome extends StatelessWidget {
       body: GridView.builder(
         physics: ScrollPhysics(),
         itemCount: cnts.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: MediaQuery.of(context).size.height * 0.00197),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 1.70),
         itemBuilder: (context, i) => ChangeNotifierProvider.value(value: cnts[i],
           child: CenterList(
             title: cnts[i].title,

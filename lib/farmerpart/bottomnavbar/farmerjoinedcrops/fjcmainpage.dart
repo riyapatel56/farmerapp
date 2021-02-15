@@ -177,7 +177,7 @@ class _FJCMainPageState extends State<FJCMainPage> {
                 decoration: BoxDecoration(color: Colors.white,boxShadow: [BoxShadow(color: Colors.grey,blurRadius: 7,offset: Offset(2.0,2.0))]),
                 child: ListTile(
                   leading: Icon(Icons.help,size: 25,color: Colors.black54,),
-                  title: Text('Other Help',style: GoogleFonts.openSans(fontSize: 18),),
+                  title: Text('Loan/Insurance',style: GoogleFonts.openSans(fontSize: 18),),
                   onTap: (){
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => OtherHelpHome()));
                   },

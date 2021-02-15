@@ -63,7 +63,7 @@ class ArtItem extends StatelessWidget {
             //text
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(top: 28.0,left: 10,right: 10,bottom: 18.0,),
+                padding: const EdgeInsets.only(top: 28.0,left: 10,right: 10,bottom: 10.0,),
                 child: Text(
                   description,
                   style: GoogleFonts.poppins(

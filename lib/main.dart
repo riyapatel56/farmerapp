@@ -1,4 +1,8 @@
 
+import 'package:after_layout/after_layout.dart';
+import 'package:farmer/logsign.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:farmer/abccentermain/farmermembers/farmmember.dart';
 import 'package:farmer/abccentermain/farmersrequest/frdetailpage.dart';
 import 'package:farmer/abccentermain/farmersrequest/frequest.dart';
 import 'package:farmer/abccentermain/transportation/transequest.dart';
@@ -23,12 +27,15 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'abccentermain/buycroprequest/abcdetailpage.dart';
 import 'abccentermain/buycroprequest/buycrop.dart';
+import 'abccentermain/farmermembers/detailfarmermember.dart';
 import 'abccentermain/loaninsurance/lidetailpage.dart';
 import 'abccentermain/loaninsurance/lirequest.dart';
 import 'abccentermain/partnershipfarming/pfdetailpage.dart';
 import 'abccentermain/partnershipfarming/pfequest.dart';
 import 'abccentermain/sellcroprequest/ascdetailpage.dart';
 import 'abccentermain/sellcroprequest/sellcrop.dart';
+import 'abccentermain/tradermembers/detailtradermember.dart';
+import 'abccentermain/tradermembers/tradermember.dart';
 import 'abccentermain/transportation/transdetailpage.dart';
 import 'abccentermain/trdrequest/trdrdetailpage.dart';
 import 'abccentermain/trdrequest/trdrequest.dart';
@@ -64,6 +71,7 @@ import 'farmerpart/bottomnavbar/shopping/categories/subcategories.dart/trendingi
 import 'farmerpart/drawerscreen/article/articlecard.dart';
 import 'farmerpart/drawerscreen/generatebill/traders.dart';
 import 'farmvisit/listoffarmerjoinedcrop/fvdetail.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 void main() {
@@ -172,12 +180,18 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
         value: Fmcenters(),
         ),
+        ChangeNotifierProvider.value(
+        value: Farmermembers(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Tradermembers(),
+        ),
         
       ],
 
       child: MaterialApp(
         title: 'Farmer App',
-        home: OnBoardingScreen(),
+        home: Splash(),
         debugShowCheckedModeBanner: false,
         routes: {
         MacDetailPage.routeName: (context) => MacDetailPage(),
@@ -210,6 +224,8 @@ class MyApp extends StatelessWidget {
         TransrequestDetailPage.routeName: (context) =>  TransrequestDetailPage(),
         TrjcDetailPage.routeName: (context) =>  TrjcDetailPage(),
         FmcntDetailPage.routeName: (context) =>  FmcntDetailPage(),
+        FrmmDetailPage.routeName: (context) =>  FrmmDetailPage(),
+        TrmmDetailPage.routeName: (context) =>  TrmmDetailPage(),
 
       },
       ),
@@ -217,3 +233,35 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class Splash extends StatefulWidget {
+  @override
+  SplashState createState() => new SplashState();
+}
+
+class SplashState extends State<Splash> with AfterLayoutMixin<Splash> {
+  Future checkFirstSeen() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool _seen = (prefs.getBool('seen') ?? false);
+
+    if (_seen) {
+      Navigator.of(context).pushReplacement(
+          new MaterialPageRoute(builder: (context) => Firstpage()));
+    } else {
+      await prefs.setBool('seen', true);
+      Navigator.of(context).pushReplacement(
+          new MaterialPageRoute(builder: (context) => OnBoardingScreen()));
+    }
+  }
+
+  @override
+  void afterFirstLayout(BuildContext context) => checkFirstSeen();
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: new Center(
+        child: new Text('Farmsbook',style: GoogleFonts.openSans(color: Colors.green[700],fontSize: 40,fontWeight: FontWeight.w600,),textAlign: TextAlign.center,),
+      ),
+    );
+  }
+}

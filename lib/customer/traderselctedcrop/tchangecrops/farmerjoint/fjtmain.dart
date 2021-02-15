@@ -166,7 +166,7 @@ class _TraderJListState extends State<TraderJList> {
       physics: ScrollPhysics(),
       shrinkWrap: true,
       itemCount: tjcs.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: MediaQuery.of(context).size.height * 0.00275),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 2.38),
       itemBuilder: (context, i) => ChangeNotifierProvider.value(value: tjcs[i],
       child: TrajoinItem(
         name: tjcs[i].name,

@@ -202,7 +202,7 @@ class TrjcDetailPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 2.0,left: 12),
                         child: Text(
-                          loadedTrjcenter.growing,
+                          loadedTrjcenter.trading,
                           style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
                           textAlign: TextAlign.start,
                         ),

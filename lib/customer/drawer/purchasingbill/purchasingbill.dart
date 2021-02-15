@@ -33,78 +33,76 @@ class PbFarmerList extends StatelessWidget {
       onTap: () {
          Navigator.of(context).pushNamed(PbfDetailPage.routeName,arguments: tsf.id);
       },
-      child: FittedBox(
-      fit: BoxFit.contain,
-      child: ClipRRect(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            //height: 0.195 * MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(color: Colors.white,border: Border.all(color: Colors.purple[100],width: 1),boxShadow: [BoxShadow(color: Colors.grey,blurRadius: 7,offset: Offset(2.0,2.0))]),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                  
-                  Padding(
-                    padding: EdgeInsets.only(top:0.001 * MediaQuery.of(context).size.height,left: 0.01 * MediaQuery.of(context).size.height),
-                    child: Container(
-                      height: 0.080 * MediaQuery.of(context).size.height,
-                      width: 0.080 * MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage(imgUrl),
-                          fit: BoxFit.cover,
-                        ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          //height: 0.195 * MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(color: Colors.white,border: Border.all(color: Colors.purple[100],width: 1),boxShadow: [BoxShadow(color: Colors.grey,blurRadius: 7,offset: Offset(2.0,2.0))]),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                
+                Padding(
+                  padding: EdgeInsets.only(top:0.01 * MediaQuery.of(context).size.height,left: 0.01 * MediaQuery.of(context).size.height),
+                  child: Container(
+                    height: 0.10 * MediaQuery.of(context).size.height,
+                    width: 0.10 * MediaQuery.of(context).size.height,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage(imgUrl),
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-
-                  Padding(
-                    padding: EdgeInsets.only(top: 0.01 * MediaQuery.of(context).size.height,left: 0.01 * MediaQuery.of(context).size.height),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(name,style: GoogleFonts.roboto(fontSize: MediaQuery.of(context).size.height * 0.015,color: Colors.black),textAlign: TextAlign.start,),
-                        SizedBox(height: 1,),
-                        Padding(
-                          padding: EdgeInsets.only(right: 0.0),
-                          child: Text('Growing $buyed',style: GoogleFonts.roboto(fontSize: MediaQuery.of(context).size.height * 0.013,color: Colors.black54),textAlign: TextAlign.start,),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(right: 0.03 * MediaQuery.of(context).size.height,bottom: 0.005 * MediaQuery.of(context).size.height),
-                          child: Text('Since $since',style: GoogleFonts.roboto(fontSize: MediaQuery.of(context).size.height * 0.013,color: Colors.black54),textAlign: TextAlign.start,),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(right: 0.03 * MediaQuery.of(context).size.height,bottom: 0.007 * MediaQuery.of(context).size.height),
-                          child: Row(
-                            children: [
-                              Icon(Icons.star_rounded,size: 17,color: Colors.black87,),
-                              Padding(
-                                padding: EdgeInsets.only(right: 0.03 * MediaQuery.of(context).size.height),
-                                child: Text(rating,style: GoogleFonts.roboto(fontSize: MediaQuery.of(context).size.height * 0.014,color: Colors.black87),textAlign: TextAlign.start,),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  //onTap: (){
-                    //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Shyam()));
-                  //},
-                  ],
                 ),
-                
+
                 Padding(
-                  padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.0,top: MediaQuery.of(context).size.height * 0.00),
-                  child: Row(
+                  padding: EdgeInsets.only(top: 0.015 * MediaQuery.of(context).size.height,left: 0.01 * MediaQuery.of(context).size.height),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        height: MediaQuery.of(context).size.height * 0.05,
+                      Text(name,style: GoogleFonts.roboto(fontSize: MediaQuery.of(context).size.height * 0.023,color: Colors.black),textAlign: TextAlign.start,),
+                      SizedBox(height: 1,),
+                      Padding(
+                        padding: EdgeInsets.only(right: 0.0),
+                        child: Text('Growing $buyed',style: GoogleFonts.roboto(fontSize: MediaQuery.of(context).size.height * 0.019,color: Colors.black54),textAlign: TextAlign.start,),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 0.03 * MediaQuery.of(context).size.height,bottom: 0.005 * MediaQuery.of(context).size.height),
+                        child: Text('Since $since',style: GoogleFonts.roboto(fontSize: MediaQuery.of(context).size.height * 0.019,color: Colors.black54),textAlign: TextAlign.start,),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 0.03 * MediaQuery.of(context).size.height,bottom: 0.007 * MediaQuery.of(context).size.height),
+                        child: Row(
+                          children: [
+                            Icon(Icons.star_rounded,size: 20,color: Colors.yellow[800],),
+                            Padding(
+                              padding: EdgeInsets.only(left: 0.007 * MediaQuery.of(context).size.height),
+                              child: Text(rating,style: GoogleFonts.roboto(fontSize: MediaQuery.of(context).size.height * 0.018,color: Colors.black87),textAlign: TextAlign.start,),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                //onTap: (){
+                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Shyam()));
+                //},
+                ],
+              ),
+              
+              Padding(
+                padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.0,top: MediaQuery.of(context).size.height * 0.00),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.07,
                         width: MediaQuery.of(context).size.height * 0.13,
                         decoration: BoxDecoration(
                           border: Border(top: BorderSide(width: 1,color: Colors.purple,),right: BorderSide(width: 1,color: Colors.purple))
@@ -116,17 +114,19 @@ class PbFarmerList extends StatelessWidget {
                             child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Icon(Icons.location_on,color: Colors.black54,size: 15),
+                              Icon(Icons.location_on,color: Colors.black54,size: 0.025 * MediaQuery.of(context).size.height),
                               SizedBox(width: 0.004 * MediaQuery.of(context).size.height,),
-                              Text(place,style: GoogleFonts.roboto(fontSize: MediaQuery.of(context).size.height * 0.014,color: Colors.black87)),
+                              Text(place,style: GoogleFonts.roboto(fontSize: MediaQuery.of(context).size.height * 0.020,color: Colors.black87)),
                             ],
                           ),
                         ),
-                    ),
+                  ),
                       ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        height: MediaQuery.of(context).size.height * 0.05,
+                    ),
+                    Expanded(
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: MediaQuery.of(context).size.height * 0.07,
                         decoration: BoxDecoration(
                           color: Colors.cyan[800],
                           //color: Colors.white,
@@ -135,14 +135,16 @@ class PbFarmerList extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.005,top: MediaQuery.of(context).size.height * 0.005),
                           child: FlatButton(
-                            child: Text('Accept \nPayment',style: GoogleFonts.roboto(color: Colors.white,fontSize: MediaQuery.of(context).size.height * 0.014,),),
+                            child: Text('Accept \nPayment',style: GoogleFonts.roboto(color: Colors.white,fontSize: MediaQuery.of(context).size.height * 0.017,),),
                             onPressed: () {},
                           ),
                         ),
                       ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        height: MediaQuery.of(context).size.height * 0.05,
+                    ),
+                    Expanded(
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: MediaQuery.of(context).size.height * 0.07,
                         decoration: BoxDecoration(
                           border: Border(top: BorderSide(width: 1,color: Colors.purple,),),
                           color: Colors.cyan[200],
@@ -151,20 +153,19 @@ class PbFarmerList extends StatelessWidget {
                         child: Padding(
                          padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.005,top: MediaQuery.of(context).size.height * 0.005),
                           child: FlatButton(
-                            child: Text('Reject\n Payment',style: GoogleFonts.roboto(color: Colors.black,fontSize: MediaQuery.of(context).size.height * 0.014,),),
+                            child: Text('Reject\n Payment',style: GoogleFonts.roboto(color: Colors.black,fontSize: MediaQuery.of(context).size.height * 0.017,),),
                             onPressed: () {},
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
-    ),
     );
   }
 }

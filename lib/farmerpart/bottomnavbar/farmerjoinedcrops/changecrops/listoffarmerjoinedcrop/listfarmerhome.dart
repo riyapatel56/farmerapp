@@ -167,7 +167,7 @@ class _FarmerJListState extends State<FarmerJList> {
       physics: ScrollPhysics(),
       shrinkWrap: true,
       itemCount: fjcs.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: MediaQuery.of(context).size.height * 0.00275),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 2.480),
       itemBuilder: (context, i) => ChangeNotifierProvider.value(value: fjcs[i],
       child: FarjoinItem(
         name: fjcs[i].name,

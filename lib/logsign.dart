@@ -1,3 +1,4 @@
+import 'package:farmer/abccentermain/abccenterabout.dart';
 import 'package:farmer/customer/chome.dart';
 import 'package:farmer/farmerpart/home.dart';
 import 'package:farmer/farmvisit/fmvhome.dart';
@@ -83,6 +84,7 @@ class _FirstpageState extends State<Firstpage> {
                               style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
+                                letterSpacing: 1.1,
                                 color: Color.fromRGBO(255,255,255,1),
                               ),
                             ),
@@ -106,6 +108,7 @@ class _FirstpageState extends State<Firstpage> {
                               style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
+                                letterSpacing: 1.1,
                                 color: Color.fromRGBO(255,255,255,1),
                               ),
                             ),
@@ -124,12 +127,13 @@ class _FirstpageState extends State<Firstpage> {
                             height: 0.045 * MediaQuery.of(context).size.height,
                             minWidth: double.infinity,
                             child: Text(
-                              'ABC Center',
+                              'ABC / FPO',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
                                 color: Color.fromRGBO(255,255,255,1),
+                                letterSpacing: 1.1,
                               ),
                             ),
                             onPressed: showModalSheetABC,
@@ -152,6 +156,7 @@ class _FirstpageState extends State<Firstpage> {
                               style: GoogleFonts.roboto(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 18,
+                                letterSpacing: 1.1,
                                 color: Color.fromRGBO(255,255,255,1),
                               ),
                             ),
@@ -939,7 +944,7 @@ class _FirstpageState extends State<Firstpage> {
                             height: 0.055 * MediaQuery.of(context).size.height,
                             width: double.infinity,
                               child: Text(
-                                'ABC Center Login', 
+                                'ABC / FPO Login', 
                                 style: GoogleFonts.openSans(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 19,
@@ -1052,7 +1057,7 @@ class _FirstpageState extends State<Firstpage> {
                               ),
                             ),
                             onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ABCHome()));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => CenterAboutInfo()));
                             },
                           ),
                         ),

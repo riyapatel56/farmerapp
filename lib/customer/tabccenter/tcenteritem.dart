@@ -61,41 +61,43 @@ class TCenterList extends StatelessWidget {
               color: Colors.white,
               ),
             ),
-              Container(color: Colors.white,
-                child: ListTile(
-                title: Padding(
-                  padding: const EdgeInsets.only(bottom: 5.0,top: 5),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        color: Colors.white54,
-                        child: Text(
-                          ' $title, $location ',
-                          style: GoogleFonts.roboto(fontWeight: FontWeight.w500,color: Colors.purple[900]),
+              Expanded(
+                child: Container(color: Colors.white,
+                  child: ListTile(
+                  title: Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0,top: 5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Container(
+                          color: Colors.white54,
+                          child: Text(
+                            ' $title, $location ',
+                            style: GoogleFonts.roboto(fontWeight: FontWeight.w500,color: Colors.purple[900]),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 2),
-                      Container(
-                        color: Colors.white54,
-                        child: Text(
-                          ' Company - $centercompany ',
-                          style: GoogleFonts.roboto(fontSize: 13,color: Colors.purple),
+                        SizedBox(height: 2),
+                        Container(
+                          color: Colors.white54,
+                          child: Text(
+                            ' Company - $centercompany ',
+                            style: GoogleFonts.roboto(fontSize: 13,color: Colors.purple),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 2),
-                      Container(
-                        color: Colors.white54,
-                        child: Text(
-                          ' Phone No - $phone ',
-                          style: GoogleFonts.roboto(fontSize: 13,color: Colors.purple),
+                        SizedBox(height: 2),
+                        Container(
+                          color: Colors.white54,
+                          child: Text(
+                            ' Phone No - $phone ',
+                            style: GoogleFonts.roboto(fontSize: 13,color: Colors.purple),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
             ),
+                ),
               ),
             ],
           ),

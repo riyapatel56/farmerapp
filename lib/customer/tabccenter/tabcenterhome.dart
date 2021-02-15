@@ -22,7 +22,7 @@ class TABCCenterHome extends StatelessWidget {
       body: GridView.builder(
         physics: ScrollPhysics(),
         itemCount: tcnts.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: MediaQuery.of(context).size.height * 0.00197),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 1.70),
         itemBuilder: (context, i) => ChangeNotifierProvider.value(value: tcnts[i],
           child: TCenterList(
             title: tcnts[i].title,

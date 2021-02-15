@@ -73,8 +73,11 @@ class TacItem extends StatelessWidget {
                             
                           },
                           color: Colors.purple,
-                          child: Text('Select',
-                          style: GoogleFonts.poppins(color: Colors.white,fontSize: 24,letterSpacing: 1.2,fontWeight: FontWeight.w500),
+                          child: FittedBox(
+                            fit: BoxFit.contain,
+                            child: Text('Select',
+                            style: GoogleFonts.poppins(color: Colors.white,fontSize: 24,letterSpacing: .9,fontWeight: FontWeight.w500),
+                            ),
                           ),
                         ),
                       ),

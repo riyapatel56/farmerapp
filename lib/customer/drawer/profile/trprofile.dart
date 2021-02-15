@@ -12,9 +12,11 @@ class TraderProfileScreen extends StatefulWidget {
 
 class MapScreenState extends State<TraderProfileScreen>
     with SingleTickerProviderStateMixin {
-  TextEditingController name = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController mobile = TextEditingController();
+
+      //here show name email mobile directly from firebase
+  //TextEditingController name = TextEditingController();
+  //TextEditingController email = TextEditingController();
+  //TextEditingController mobile = TextEditingController();
   TextEditingController pincode = TextEditingController();
   TextEditingController state = TextEditingController();
   TextEditingController address = TextEditingController();
@@ -26,6 +28,7 @@ class MapScreenState extends State<TraderProfileScreen>
 
   bool _status = true;
   final FocusNode myFocusNode = FocusNode();
+  
 
   // @override
   // void initState() {
@@ -136,11 +139,11 @@ class MapScreenState extends State<TraderProfileScreen>
                             children: <Widget>[
                               Flexible(
                                 child: TextField(
-                                  controller: name,
+                                  //controller: name,
                                   decoration: const InputDecoration(
                                     hintText: "Enter Your Name",
                                   ),
-                                  enabled: !_status,
+                                  enabled: false,
                                   autofocus: !_status,
                                 ),
                               ),
@@ -172,11 +175,11 @@ class MapScreenState extends State<TraderProfileScreen>
                             children: <Widget>[
                               Flexible(
                                 child: TextField(
-                                  controller: email,
+                                  //controller: email,
                                   decoration: const InputDecoration(
                                     hintText: "Enter Email ID"
                                   ),
-                                  enabled: !_status,
+                                  enabled: false,
                                 ),
                               ),
                             ],
@@ -208,10 +211,10 @@ class MapScreenState extends State<TraderProfileScreen>
                               children: <Widget>[
                                 Flexible(
                                   child: TextField(
-                                    controller: mobile,
+                                    //controller: mobile,
                                     decoration: const InputDecoration(
                                         hintText: "Enter Mobile Number"),
-                                    enabled: !_status,
+                                    enabled: false,
                                   ),
                                 ),
                               ],
@@ -581,13 +584,25 @@ class MapScreenState extends State<TraderProfileScreen>
 
   Widget _getEditIcon() {
     return GestureDetector(
-      child: CircleAvatar(
-        backgroundColor: Colors.red[400],
-        radius: 20.0,
-        child: Icon(
-          Icons.edit,
-          color: Colors.white,
-          size: 20.0,
+      child: Container(
+        height: 45,
+        width: 100,
+        color: Colors.pink[400],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(width: 5),
+              Icon(
+                Icons.edit,
+                color: Colors.white,
+                size: 20.0,
+              ),
+              SizedBox(width: 5),
+              Text('Edit',style: GoogleFonts.openSans(color: Colors.white, fontSize: 18.0,fontWeight: FontWeight.w600,letterSpacing: 1.4),),
+            ],
+          ),
         ),
       ),
       onTap: () {

@@ -65,7 +65,7 @@ class CenterList extends StatelessWidget {
               Container(color: Colors.white,
                 child: ListTile(
                 title: Padding(
-                  padding: const EdgeInsets.only(bottom: 5.0,top: 5),
+                  padding: const EdgeInsets.only(bottom: 1.0,top: 5),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.end,

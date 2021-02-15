@@ -195,7 +195,7 @@ class TrcntDetailPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0,left: 12),
                         child: Text(
-                          'Traing',
+                          'Trading',
                           style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
                           textAlign: TextAlign.start,
                         ),
@@ -203,7 +203,7 @@ class TrcntDetailPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 2.0,left: 12),
                         child: Text(
-                          loadedTcentr.growing,
+                          loadedTcentr.trading,
                           style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
                           textAlign: TextAlign.start,
                         ),

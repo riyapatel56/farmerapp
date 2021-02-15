@@ -87,7 +87,7 @@ class _OtherHelpHomeState extends State<OtherHelpHome>
                           ),
                           Positioned(
                             top: MediaQuery.of(context).size.height * 0.120,
-                            left: MediaQuery.of(context).size.height * 0.160,
+                            left: MediaQuery.of(context).size.height * 0.170,
                             child: Container(
                               decoration: BoxDecoration(boxShadow: [BoxShadow(blurRadius: 4,color: Colors.grey)]),
                               height: MediaQuery.of(context).size.height * 0.17,
@@ -127,11 +127,12 @@ class _OtherHelpHomeState extends State<OtherHelpHome>
                           ),
                         ),
                         Positioned(
-                          top: MediaQuery.of(context).size.height * 0.02,
-                          right: MediaQuery.of(context).size.height * 0.280,
+                          top: MediaQuery.of(context).size.height * 0.028,
+                          right: MediaQuery.of(context).size.width * 0.63,
                           child: Container(
                             decoration: BoxDecoration(boxShadow: [BoxShadow(blurRadius: 4,color: Colors.grey)]),
-                            height: MediaQuery.of(context).size.height * 0.21,
+                            height: MediaQuery.of(context).size.height * 0.18,
+                            width: MediaQuery.of(context).size.height * 0.155,
                             child: Image.asset('assets/images/insurance.gif')
                           ),
                         ),

@@ -1,5 +1,5 @@
 
-import 'package:farmer/farmerpart/bottomnavbar/abccentmember/abcmhome.dart';
+import 'package:farmer/abccentermain/homeabcc.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -18,12 +18,14 @@ class MapScreenState extends State<ABCProfile>
   TextEditingController pincode = TextEditingController();
   TextEditingController state = TextEditingController();
   TextEditingController address = TextEditingController();
-  TextEditingController land = TextEditingController();
-  TextEditingController centercode = TextEditingController();
-  TextEditingController workers = TextEditingController();
-  TextEditingController income = TextEditingController();
+  TextEditingController centervillage = TextEditingController();
+  TextEditingController estimatefarmer = TextEditingController();
+  TextEditingController motivation = TextEditingController();
+  //TextEditingController income = TextEditingController();
   TextEditingController fvisit = TextEditingController();
-  TextEditingController since = TextEditingController();
+  TextEditingController workingstatus = TextEditingController();
+  TextEditingController cpincode = TextEditingController();
+  TextEditingController cstate = TextEditingController();
 
   bool _status = true;
   final FocusNode myFocusNode = FocusNode();
@@ -42,7 +44,25 @@ class MapScreenState extends State<ABCProfile>
           'Profile',
           style: GoogleFonts.openSans(color: Colors.orange[900],fontWeight: FontWeight.w600,letterSpacing: 1.4),
         ),
-        
+        /*actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 5.0, top: 8,bottom: 8),
+            child: GestureDetector(
+              onTap: () {
+                //Navigator.of(context).push(MaterialPageRoute(builder: (context) => ABCMainHome()));
+              },
+              child: Container(
+                color: Colors.red[400],
+                child: Row(
+                  children: [
+                    IconButton(icon: Icon(Icons.verified),iconSize: 20,color: Colors.white, onPressed: () {  },),
+                    Text(' Apply For ABC Center ',style: GoogleFonts.openSans(color: Colors.white, fontWeight: FontWeight.w600),)
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],*/
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.orange[800]),
       ),
@@ -79,7 +99,8 @@ class MapScreenState extends State<ABCProfile>
                                     'Personal Information',
                                     style: GoogleFonts.openSans(
                                       fontSize: 18,
-                                      fontWeight: FontWeight.w600
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.orange[900],
                                     ),
                                   ),
                                 ],
@@ -123,7 +144,7 @@ class MapScreenState extends State<ABCProfile>
                                   decoration: const InputDecoration(
                                     hintText: "Enter Your Name",
                                   ),
-                                  enabled: !_status,
+                                  enabled: false,
                                   autofocus: !_status,
                                 ),
                               ),
@@ -159,7 +180,7 @@ class MapScreenState extends State<ABCProfile>
                                   decoration: const InputDecoration(
                                     hintText: "Enter Email ID"
                                   ),
-                                  enabled: !_status,
+                                  enabled: false,
                                 ),
                               ),
                             ],
@@ -194,7 +215,7 @@ class MapScreenState extends State<ABCProfile>
                                     controller: mobile,
                                     decoration: const InputDecoration(
                                         hintText: "Enter Mobile Number"),
-                                    enabled: !_status,
+                                    enabled: false,
                                   ),
                                 ),
                               ],
@@ -210,7 +231,7 @@ class MapScreenState extends State<ABCProfile>
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Text(
-                                    'Address',
+                                    'Personal Address',
                                     style: GoogleFonts.openSans(fontSize: 15,fontWeight: FontWeight.w700),
                                   ),
                                 ],
@@ -294,8 +315,25 @@ class MapScreenState extends State<ABCProfile>
                               ],
                             )
                           ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only( top: 35.0,left: 25),
+                                child: Text(
+                                  'Require detail for ABC Center',
+                                  style: GoogleFonts.openSans(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.orange[900],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                           Padding(
-                          padding: EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
+                          padding: EdgeInsets.only(left: 25.0, right: 25.0, top: 35.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
@@ -304,7 +342,7 @@ class MapScreenState extends State<ABCProfile>
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Text(
-                                    'Land Area',
+                                    'Which Village You Want To Open',
                                     style: GoogleFonts.openSans(fontSize: 15,fontWeight: FontWeight.w700),
                                   ),
                                 ],
@@ -319,9 +357,9 @@ class MapScreenState extends State<ABCProfile>
                             children: <Widget>[
                               Flexible(
                                 child: TextField(
-                                  controller: land,
+                                  controller: centervillage,
                                   decoration: const InputDecoration(
-                                    hintText: "Enter Acre of Land You Have",
+                                    hintText: "Enter Village Name",
                                   ),
                                   enabled: !_status,
                                   autofocus: !_status,
@@ -330,6 +368,66 @@ class MapScreenState extends State<ABCProfile>
                             ],
                           )
                         ),
+
+                        Padding(
+                            padding: EdgeInsets.only(
+                                left: 25.0, right: 25.0, top: 25.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Expanded(
+                                  child: Container(
+                                    child: Text(
+                                      'Pin Code',
+                                      style: GoogleFonts.openSans(fontSize: 15,fontWeight: FontWeight.w700),
+                                    ),
+                                  ),
+                                  flex: 2,
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    child: Text(
+                                      'State',
+                                      style: GoogleFonts.openSans(fontSize: 15,fontWeight: FontWeight.w700),
+                                    ),
+                                  ),
+                                  flex: 2,
+                                ),
+                              ],
+                            )),
+                        Padding(
+                            padding: EdgeInsets.only(
+                                left: 25.0, right: 25.0, top: 2.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                Flexible(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(right: 10.0),
+                                    child: TextField(
+                                      controller: cpincode,
+                                      decoration: const InputDecoration(
+                                          hintText: "Enter Pin Code"),
+                                      enabled: !_status,
+                                    ),
+                                  ),
+                                  flex: 2,
+                                ),
+                                Flexible(
+                                  child: TextField(
+                                    controller: cstate,
+                                    decoration: const InputDecoration(
+                                        hintText: "Enter State"),
+                                    enabled: !_status,
+                                  ),
+                                  flex: 2,
+                                ),
+                              ],
+                            )
+                          ),
+
                         Padding(
                           padding: EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
                           child: Row(
@@ -340,7 +438,7 @@ class MapScreenState extends State<ABCProfile>
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Text(
-                                    'Center Code',
+                                    'Estimate Farmer In Your Village',
                                     style: GoogleFonts.openSans(fontSize: 15,fontWeight: FontWeight.w700),
                                   ),
                                 ],
@@ -355,9 +453,9 @@ class MapScreenState extends State<ABCProfile>
                             children: <Widget>[
                               Flexible(
                                 child: TextField(
-                                  controller: centercode,
+                                  controller: estimatefarmer,
                                   decoration: const InputDecoration(
-                                    hintText: "Enter Code Of Center",
+                                    hintText: "Enter Number",
                                   ),
                                   enabled: !_status,
                                   autofocus: !_status,
@@ -377,7 +475,7 @@ class MapScreenState extends State<ABCProfile>
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Text(
-                                    'Working Since',
+                                    'Current Working Status',
                                     style: GoogleFonts.openSans(fontSize: 15,fontWeight: FontWeight.w700),
                                   ),
                                 ],
@@ -392,9 +490,9 @@ class MapScreenState extends State<ABCProfile>
                             children: <Widget>[
                               Flexible(
                                 child: TextField(
-                                  controller: since,
+                                  controller: workingstatus,
                                   decoration: const InputDecoration(
-                                    hintText: "Enter Year",
+                                    hintText: "Enter",
                                   ),
                                   enabled: !_status,
                                   autofocus: !_status,
@@ -415,7 +513,7 @@ class MapScreenState extends State<ABCProfile>
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   Text(
-                                    'Total No. Of Workers',
+                                    'Motivation Behind Opening ABC Center',
                                     style: GoogleFonts.openSans(fontSize: 15,fontWeight: FontWeight.w700),
                                   ),
                                 ],
@@ -430,9 +528,9 @@ class MapScreenState extends State<ABCProfile>
                             children: <Widget>[
                               Flexible(
                                 child: TextField(
-                                  controller: workers,
+                                  controller: motivation,
                                   decoration: const InputDecoration(
-                                    hintText: "Enter No.",
+                                    hintText: "Enter 3 to 4 lines",
                                   ),
                                   enabled: !_status,
                                   autofocus: !_status,
@@ -441,7 +539,7 @@ class MapScreenState extends State<ABCProfile>
                             ],
                           )
                         ),
-                        Padding(
+                        /*Padding(
                           padding: EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -476,7 +574,7 @@ class MapScreenState extends State<ABCProfile>
                               ),
                             ],
                           )
-                        ),
+                        ),*/
 
                         
 
@@ -564,13 +662,25 @@ class MapScreenState extends State<ABCProfile>
 
   Widget _getEditIcon() {
     return GestureDetector(
-      child: CircleAvatar(
-        backgroundColor: Colors.red[400],
-        radius: 27.0,
-        child: Icon(
-          Icons.edit,
-          color: Colors.white,
-          size: 25.0,
+      child: Container(
+        height: 45,
+        width: 100,
+        color: Colors.pink[400],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(width: 5),
+              Icon(
+                Icons.edit,
+                color: Colors.white,
+                size: 20.0,
+              ),
+              SizedBox(width: 5),
+              Text('Edit',style: GoogleFonts.openSans(color: Colors.white, fontSize: 18.0,fontWeight: FontWeight.w600,letterSpacing: 1.4),),
+            ],
+          ),
         ),
       ),
       onTap: () {
@@ -706,280 +816,4 @@ class AttachmentState extends State<ImagePickerData> {
   }
 }
 
-/*class ABCProfile extends StatefulWidget {
-  @override
-  _ProfileScreenState createState() => _ProfileScreenState();
-}
 
-class _ProfileScreenState extends State<ABCProfile> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green[900],
-        title: Text('Profile'),
-      ),
-      body: ListView(
-        children: [
-          Container(
-            //height: 0.955 * MediaQuery.of(context).size.height,
-            color: Colors.white,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 0.300 * MediaQuery.of(context).size.height,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    border: Border.all(color: Colors.black),
-                    shape: BoxShape.rectangle,
-                    image: DecorationImage(image: AssetImage('assets/images/p1.jpg'),fit: BoxFit.fill)
-                  ),
-                ),
-                
-                Padding(
-                  padding: EdgeInsets.only(left: 14,right: 18,bottom: 18),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Information',
-                        style: GoogleFonts.openSans(fontSize: 22,fontWeight: FontWeight.w600,letterSpacing: 1),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top:8.0),
-                    child: Divider(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                      color: Colors.grey,
-                    ),
-                  ),
-
-                  
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,left: 12),
-                    child: Text(
-                      'Name',
-                      style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0,left: 12),
-                    child: Text(
-                      'Mitesh Shah',
-                      style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top:8.0),
-                    child: Divider(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                      color: Colors.grey,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,left: 12),
-                    child: Text(
-                      'Mobile Number',
-                      style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0,left: 12),
-                    child: Text(
-                      '1234567890',
-                      style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top:8.0),
-                    child: Divider(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                      color: Colors.grey,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,left: 12),
-                    child: Text(
-                      'Mail ID',
-                      style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0,left: 12),
-                    child: Text(
-                      'xyz@gmail.com',
-                      style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top:8.0),
-                    child: Divider(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                      color: Colors.grey,
-                    ),
-                  ),
-
-                  
-
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,left: 12),
-                    child: Text(
-                      'Acres of Land ',
-                      style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0,left: 12),
-                    child: Text(
-                      '7',
-                      style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top:8.0),
-                    child: Divider(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                      color: Colors.grey,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,left: 12),
-                    child: Text(
-                      'Growing',
-                      style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0,left: 12),
-                    child: Text(
-                      'Wheat, Apple, Maize',
-                      style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top:8.0),
-                    child: Divider(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                      color: Colors.grey,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,left: 12),
-                    child: Text(
-                      'From',
-                      style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0,left: 12),
-                    child: Text(
-                      'Jaipur, Rajasthan',
-                      style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top:8.0),
-                    child: Divider(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                      color: Colors.grey,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,left: 12),
-                    child: Text(
-                      'Total No Of Workers',
-                      style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0,left: 12),
-                    child: Text(
-                      '4',
-                      style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top:8.0),
-                    child: Divider(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                      color: Colors.grey,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0,left: 12),
-                    child: Text(
-                      'Income Per Year',
-                      style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.w400,letterSpacing: 1,color: Colors.grey[600]),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0,left: 12),
-                    child: Text(
-                      '1,00,000',
-                      style: GoogleFonts.openSans(fontSize: 17,fontWeight: FontWeight.w600,letterSpacing: 1),
-                      textAlign: TextAlign.start,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top:8.0),
-                    child: Divider(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                      color: Colors.grey,
-                    ),
-                  ),
-                    ],
-                  ),
-                ),
-
-              ],
-            ),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.edit),
-        backgroundColor: Colors.green[800],
-        onPressed: (){
-          //Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfileEdit()));
-        },
-      ),
-    );
-  }
-}*/

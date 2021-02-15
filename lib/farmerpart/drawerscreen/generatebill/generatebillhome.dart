@@ -34,7 +34,7 @@ class AllTraders extends StatelessWidget {
       physics: ScrollPhysics(),
       shrinkWrap: true,
       itemCount: trds.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 0.002475 * MediaQuery.of(context).size.height),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 2.1),
       itemBuilder: (context, i) => ChangeNotifierProvider.value(value: trds[i],
       child: TrdItem(
         name: trds[i].name,
@@ -171,50 +171,49 @@ class TrdItem extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 10,),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 8.0),
-                            child: Container(
-                              alignment: Alignment.center,
-                              height: 0.0495 * MediaQuery.of(context).size.height,
-                              decoration: BoxDecoration(
-                                color: Colors.purple,
-                              ),
-                              child: FlatButton(
-                                child: Text('Generate Bill',style: GoogleFonts.roboto(color: Colors.white,fontSize: 16,fontWeight: FontWeight.w500),),
-                                onPressed: () {
-                                  showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      return Dialog(
-                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-                                      elevation: 16,
-                                        child: Container(
-                                          height: 0.7100 * MediaQuery.of(context).size.height,
-                                          width: double.infinity,
-                                          child: ListView(
-                                            //crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.01,),
-                                                child: Container(
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Bill',
-                                                    style: GoogleFonts.openSans(
-                                                      fontSize: 0.025 * MediaQuery.of(context).size.height, 
-                                                      fontWeight: FontWeight.w500,
-                                                    ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 0.0495 * MediaQuery.of(context).size.height,
+                            decoration: BoxDecoration(
+                              color: Colors.purple,
+                            ),
+                            child: FlatButton(
+                              child: Text('Generate Bill',style: GoogleFonts.roboto(color: Colors.white,fontSize: 16,fontWeight: FontWeight.w500),),
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return Dialog(
+                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+                                    elevation: 16,
+                                      child: Container(
+                                        height: 0.7100 * MediaQuery.of(context).size.height,
+                                        width: double.infinity,
+                                        child: ListView(
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.01,),
+                                              child: Container(
+                                                alignment: Alignment.center,
+                                                child: Text(
+                                                  'Bill',
+                                                  style: GoogleFonts.openSans(
+                                                    fontSize: 0.025 * MediaQuery.of(context).size.height, 
+                                                    fontWeight: FontWeight.w500,
                                                   ),
                                                 ),
                                               ),
-                                              Container(
-                                                height: 1,
-                                                decoration: BoxDecoration(
-                                                  color: Colors.grey,
-                                                ),
+                                            ),
+                                            Container(
+                                              height: 1,
+                                              decoration: BoxDecoration(
+                                                color: Colors.grey,
                                               ),
-                                              Padding(
+                                            ),
+                                            Padding(
                     padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.008,left: MediaQuery.of(context).size.height * 0.012),
                     child: Text(
                       'Name',
@@ -247,8 +246,8 @@ class TrdItem extends StatelessWidget {
                       ),
                       child: TextField(
                         decoration: InputDecoration(
-                            hintText: 'Enter Crop Name',
-                            contentPadding: EdgeInsets.all(10.0),
+                          hintText: 'Enter Crop Name',
+                          contentPadding: EdgeInsets.all(10.0),
                         ),
                       ),
                     ),
@@ -270,8 +269,8 @@ class TrdItem extends StatelessWidget {
                       ),
                       child: TextField(
                         decoration: InputDecoration(
-                            hintText: 'Enter Quantity ',
-                            contentPadding: EdgeInsets.all(10.0),
+                          hintText: 'Enter Quantity ',
+                          contentPadding: EdgeInsets.all(10.0),
                         ),
                       ),
                     ),
@@ -293,8 +292,8 @@ class TrdItem extends StatelessWidget {
                       ),
                       child: TextField(
                         decoration: InputDecoration(
-                            hintText: 'Enter Amount',
-                            contentPadding: EdgeInsets.all(10.0),
+                          hintText: 'Enter Amount',
+                          contentPadding: EdgeInsets.all(10.0),
                         ),
                       ),
                     ),
@@ -349,33 +348,30 @@ class TrdItem extends StatelessWidget {
                     ),
                     ),
                     
-                    Expanded(
-                    child: Padding(
+                    Padding(
                       padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05,bottom: MediaQuery.of(context).size.height * 0.058),
                       child: Container(
                         alignment: Alignment.center,
                         child: FlatButton(
-                            color: Colors.purple,
-                            onPressed: () {},
-                            child: Text(
-                              'Request For Payment',
-                              style: GoogleFonts.roboto(
-                                color: Colors.white,
-                              ),
+                          color: Colors.purple,
+                          onPressed: () {},
+                          child: Text(
+                            'Request For Payment',
+                            style: GoogleFonts.roboto(
+                              color: Colors.white,
                             ),
+                          ),
                         ),
                       ),
                     ),
-                    ),
                     
-                                            ],
-                                          ),
+                                          ],
                                         ),
-                                      );
-                                    }
-                                  );  
-                                },
-                              ),
+                                      ),
+                                    );
+                                  }
+                                );  
+                              },
                             ),
                           ),
                         ),
