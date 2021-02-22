@@ -2,13 +2,28 @@ import 'package:farmer/farmvisit/listoffarmerjoinedcrop/fm.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+//import 'package:full_screen_image/full_screen_image.dart';
+//import 'package:full_screen_image/full_screen_image.dart';
 
 
 
-class FvfDetailPage extends StatelessWidget {
+class FvfDetailPage extends StatefulWidget {
 
   static const routeName = '/fvfarmer-detail';
 
+  @override
+  _FvfDetailPageState createState() => _FvfDetailPageState();
+}
+
+class _FvfDetailPageState extends State<FvfDetailPage> 
+  with SingleTickerProviderStateMixin {
+  TabController _tabController;
+
+  @override
+  void initState() {
+    _tabController = TabController(length: 2, vsync: this);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +96,7 @@ class FvfDetailPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      
+
                       Container(
                         alignment: Alignment.center,
                         child: Text(
@@ -89,6 +104,48 @@ class FvfDetailPage extends StatelessWidget {
                           style: GoogleFonts.openSans(color: Colors.black87,fontSize: MediaQuery.of(context).size.height * 0.02,letterSpacing: 1.0),
                         ),
                       ),
+                      
+                      Padding(
+                padding: const EdgeInsets.only(top:18,bottom: 20),
+                child: Container(
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(226,226,226,1)
+                  ),
+                  child: TabBar(
+                    controller: _tabController,
+                    // give the indicator a decoration (color and border radius)
+                    indicator: BoxDecoration(
+                      color: Colors.lightGreen[400]
+                    ),
+                    labelColor: Color.fromRGBO(0,0,87,1),
+                    unselectedLabelColor: Colors.black,
+                    tabs: [
+                      Tab(
+                        text: 'Personal Details',
+                      ),
+
+                      // second tab [you can add an icon using the icon property]
+                      Tab(
+                        text: 'Farm Images',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+                      Expanded(
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    // first tab bar view widget 
+                    SingleChildScrollView(
+                      child: Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+
+                            
 
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -98,8 +155,8 @@ class FvfDetailPage extends StatelessWidget {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                              'About',
-                              style: GoogleFonts.openSans(fontSize: 22,fontWeight: FontWeight.w600,letterSpacing: 1,color: Colors.green[900]),
+                              'Profile',
+                              style: GoogleFonts.openSans(fontSize: 18,fontWeight: FontWeight.w600,letterSpacing: 1,color: Colors.green[900]),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -292,6 +349,135 @@ class FvfDetailPage extends StatelessWidget {
                         ),
                       ),
 
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    
+                    
+                    // second tab bar view widget
+                    SingleChildScrollView(
+                      child: Column(
+                        children: [
+
+                          
+                          
+                          //1 row
+                          Row(
+                            children: [
+                              Expanded(
+                                child: GestureDetector(
+                                  onTap: () async {
+                                    await showDialog(context: context,builder: (_) => ImageDialog1());
+                                  },
+                                  child: Container(
+                                    height: 120,
+                                    //width: 60,
+                                    child: Image.asset(loadedFvf.img1,fit: BoxFit.cover),
+                                  ),
+                                ),
+                              ),
+                              
+
+                              SizedBox(width: 8,),
+
+                              Expanded(
+                                child: GestureDetector(
+                                  onTap: () async {
+                                    await showDialog(context: context,builder: (_) => ImageDialog2());
+                                  },
+                                  child: Container(
+                                    height: 120,
+                                    //width: 110,
+                                    child: Image.asset(loadedFvf.img2,fit: BoxFit.cover),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          //2 row
+                          Padding(
+                            padding: const EdgeInsets.only(top:8.0),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: GestureDetector(
+                                    onTap: () async {
+                                      await showDialog(context: context,builder: (_) => ImageDialog3());
+                                    },
+                                    child: Container(
+                                      height: 120,
+                                      //width: 60,
+                                      child: Image.asset(loadedFvf.img3,fit: BoxFit.cover),
+                                    ),
+                                  ),
+                                ),
+
+                                SizedBox(width: 8,),
+
+                                Expanded(
+                                  child: GestureDetector(
+                                    onTap: () async {
+                                      await showDialog(context: context,builder: (_) => ImageDialog4());
+                                    },
+                                    child: Container(
+                                      height: 120,
+                                      //width: 110,
+                                      child: Image.asset(loadedFvf.img4,fit: BoxFit.cover),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          //3 row
+                          Padding(
+                            padding: const EdgeInsets.only(top:8.0),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: GestureDetector(
+                                    onTap: () async {
+                                      await showDialog(context: context,builder: (_) => ImageDialog5());
+                                    },
+                                    child: Container(
+                                      height: 120,
+                                      //width: 60,
+                                      child: Image.asset(loadedFvf.img5,fit: BoxFit.cover),
+                                    ),
+                                  ),
+                                ),
+
+                                SizedBox(width: 8,),
+
+                                Expanded(
+                                  child: GestureDetector(
+                                    onTap: () async {
+                                      await showDialog(context: context,builder: (_) => ImageDialog6());
+                                    },
+                                    child: Container(
+                                      height: 120,
+                                      //width: 110,
+                                      child: Image.asset(loadedFvf.img6,fit: BoxFit.cover),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+
+                        ],
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+
                     ],
                   ),
                 ),
@@ -302,6 +488,121 @@ class FvfDetailPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(onPressed: () {  },child: Icon(Icons.call),backgroundColor: Colors.redAccent[700],),
+    );
+  }
+}
+
+class ImageDialog1 extends StatefulWidget {
+
+  @override
+  _ImageDialog1State createState() => _ImageDialog1State();
+}
+
+class _ImageDialog1State extends State<ImageDialog1> {
+  @override
+  Widget build(BuildContext context) {
+
+    return Dialog(
+      child: Container(
+        width: 500,
+        height: 230,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: ExactAssetImage('assets/images/fv1.jpg'),
+            fit: BoxFit.cover
+          )
+        ),
+      ),
+    );
+  }
+}
+
+class ImageDialog2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+        width: 500,
+        height: 230,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: ExactAssetImage('assets/images/fv2.jpg'),
+            fit: BoxFit.cover
+          )
+        ),
+      ),
+    );
+  }
+}
+
+class ImageDialog3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+        width: 500,
+        height: 230,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: ExactAssetImage('assets/images/fv3.jpg'),
+            fit: BoxFit.cover
+          )
+        ),
+      ),
+    );
+  }
+}
+
+class ImageDialog4 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+        width: 500,
+        height: 230,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: ExactAssetImage('assets/images/fv4.jpg'),
+            fit: BoxFit.cover
+          )
+        ),
+      ),
+    );
+  }
+}
+
+class ImageDialog5 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+        width: 500,
+        height: 230,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: ExactAssetImage('assets/images/fv5.jpg'),
+            fit: BoxFit.cover
+          )
+        ),
+      ),
+    );
+  }
+}
+
+class ImageDialog6 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      child: Container(
+        width: 500,
+        height: 230,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: ExactAssetImage('assets/images/fv6.jpg'),
+            fit: BoxFit.cover
+          )
+        ),
+      ),
     );
   }
 }

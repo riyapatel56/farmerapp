@@ -1,8 +1,10 @@
 
-import 'package:farmer/customer/tabccenter/tabcenterhome.dart';
+import 'package:farmer/customer/msp/tmsphome.dart';
+import 'package:farmer/customer/tabcfpo/tabcfpo.dart';
 import 'package:farmer/customer/traderselctedcrop/traderselecthome.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 
 
@@ -16,8 +18,8 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
   var currentTab = [
     //FJCMainPage(),
     TraderSelectCropHome(),
-    TABCCenterHome(),
-    //ShopScreen(),
+    TABCFPOHome(),
+    TMSPHome(),
   ];
 
   @override
@@ -39,12 +41,12 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
           ),
           BottomNavigationBarItem(
             icon: new Icon(Icons.center_focus_strong),
-            label: 'ABC Center',
+            label: 'Buy',
           ),
-          /*BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_outlined),
-            label: 'Shop',
-          )*/
+          BottomNavigationBarItem(
+            icon: Icon(MdiIcons.currencyInr),
+            label: 'MSP',
+          )
         ],
       ),
     );

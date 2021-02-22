@@ -1,7 +1,6 @@
 import 'package:farmer/customer/tabccenter/tcenter.dart';
 import 'package:farmer/customer/tabccenter/tcenteritem.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 
@@ -13,16 +12,12 @@ class TABCCenterHome extends StatelessWidget {
     final tcnts = tcentrData.items;
     
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.cyan[800],
-        title: Text('List Of Near By ABC Center',style: GoogleFonts.openSans(color: Colors.white,fontWeight: FontWeight.w600),),
-        automaticallyImplyLeading: false,
-      ),
+     
       backgroundColor: Colors.white,
       body: GridView.builder(
         physics: ScrollPhysics(),
         itemCount: tcnts.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 1.70),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 1.67),
         itemBuilder: (context, i) => ChangeNotifierProvider.value(value: tcnts[i],
           child: TCenterList(
             title: tcnts[i].title,

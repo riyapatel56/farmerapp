@@ -1,5 +1,6 @@
 
-import 'package:farmer/farmerpart/bottomnavbar/abccentmember/abcmhome.dart';
+import 'package:farmer/farmerpart/bottomnavbar/memabcfpo/abccentmember/abcmhome.dart';
+import 'package:farmer/resetpassword/resetpassword.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -47,15 +48,18 @@ class MapScreenState extends State<ProfileScreen>
             padding: const EdgeInsets.only(right: 5.0, top: 8,bottom: 8),
             child: GestureDetector(
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ABCMHome()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResetPassword()));
               },
               child: Container(
                 color: Colors.red[400],
-                child: Row(
-                  children: [
-                    IconButton(icon: Icon(Icons.verified),iconSize: 20,color: Colors.white, onPressed: () {  },),
-                    Text(' Apply For ABC Center ',style: GoogleFonts.openSans(color: Colors.white, fontWeight: FontWeight.w600),)
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8.0,left: 8),
+                  child: Center(child: Row(
+                    children: [
+                      //IconButton(icon: Icon(Icons.k),iconSize: 20,color: Colors.white, onPressed: () {  },),
+                      Text( 'Reset Password ',style: GoogleFonts.openSans(color: Colors.white, fontWeight: FontWeight.w600),),
+                    ],
+                  )),
                 ),
               ),
             ),
@@ -648,9 +652,9 @@ class MapScreenState extends State<ProfileScreen>
 }
 
 class ImagePickerData extends StatefulWidget {
-  List Data;
-  int ITId;
-  ImagePickerData({this.Data, this.ITId});
+  final List data;
+  final int iitd;
+  ImagePickerData({this.data, this.iitd});
   @override
   AttachmentState createState() => new AttachmentState();
 }

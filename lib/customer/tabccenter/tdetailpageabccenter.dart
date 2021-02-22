@@ -1,8 +1,6 @@
 
-import 'package:farmer/customer/drawer/profile/trprofile.dart';
 import 'package:farmer/customer/tabccenter/form/abcform.dart';
 import 'package:farmer/customer/tabccenter/tcenter.dart';
-import 'package:farmer/customer/traderselctedcrop/farmerlist/hometsfarmerlist.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

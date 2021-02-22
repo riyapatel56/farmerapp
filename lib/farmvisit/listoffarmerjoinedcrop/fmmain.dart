@@ -27,6 +27,7 @@ class FvFarmerHome extends StatelessWidget {
         since: fvfs[i].since,
         rating: fvfs[i].rating,
         email: fvfs[i].email,
+        img1: fvfs[i].img1,
         //price: trds[i].price,
       ),
       ),

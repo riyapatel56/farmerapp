@@ -1,7 +1,6 @@
 
 import 'package:farmer/customer/traderselctedcrop/tchangecrops/tcategories/ttraditionalcrops/ttraditional.dart';
 import 'package:farmer/customer/traderselctedcrop/tchangecrops/tcategories/ttraditionalcrops/ttrdetail.dart';
-import 'package:farmer/farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/categories/traditionalcrops/traditional.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

@@ -2,7 +2,6 @@
 import 'package:farmer/customer/drawer/purchasingbill/pbf.dart';
 import 'package:farmer/customer/drawer/purchasingbill/pbfdetail.dart';
 import 'package:provider/provider.dart';
-import 'package:rating_dialog/rating_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -2,8 +2,6 @@
 import 'package:farmer/customer/tabccenter/listoftraders/tcenterlist.dart';
 import 'package:farmer/customer/tabccentermember/farmmcenter/fmcenterlist.dart';
 import 'package:farmer/customer/tabccentermember/tsellcrop.dart';
-import 'package:farmer/farmerpart/bottomnavbar/abccenter/listoffarmersforcenter/fcenterlist.dart';
-import 'package:farmer/farmerpart/bottomnavbar/farmerjoinedcrops/mainfarmerjoinedcrops/scbuyerlist/buyerlist.dart';
 import 'package:farmer/farmerpart/drawerscreen/otherhelp/loan/loanhome.dart';
 import 'package:farmer/farmerpart/drawerscreen/otherhelp/transportation/transhome.dart';
 import 'package:flutter/material.dart';
@@ -14,12 +12,105 @@ class TABCMHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ABC Center',style: GoogleFonts.openSans(color: Colors.white,fontWeight: FontWeight.w600),),
-        backgroundColor: Colors.cyan[800],
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.cyan[700],
+        title: FittedBox(
+          fit: BoxFit.contain,
+          child: Text('ABC',
+            style: GoogleFonts.openSans(
+              color: Colors.white,
+              fontWeight: FontWeight.w500
+            ),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+
+            Padding(
+              padding: const EdgeInsets.only(top:8.0,bottom: 14),
+              child: Row(
+                        children: [
+                          //buy
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  right: BorderSide(color: Colors.grey[400]),
+                                  //bottom: BorderSide(color: Colors.grey[400]),
+                                ),
+                              ),
+                              child: GestureDetector(
+                                onTap: () {
+                                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => ASCHome()));
+                                },
+                                child: Column(
+                                  children: [
+                                    Text('18',style: GoogleFonts.poppins(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w500,letterSpacing: 1.2),),
+                                    Text('Buy Crops',style: GoogleFonts.poppins(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500,letterSpacing: .5),textAlign: TextAlign.center,),
+                                    //SizedBox(width: 4,)
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          //partnership
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  right: BorderSide(color: Colors.grey[400]),
+                                  //bottom: BorderSide(color: Colors.grey[400]),
+                                ),
+                              ),
+                              child: GestureDetector(
+                                onTap: () {
+                                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => PFHome()));
+                                },
+                                child: Column(
+                                  children: [
+                                    Text('7',style: GoogleFonts.poppins(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w500,letterSpacing: 1.2),textAlign: TextAlign.center,),
+                                    Text('Partnership Business',style: GoogleFonts.poppins(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500,letterSpacing: .5),),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          //transport your crop
+                          Expanded(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  //right: BorderSide(color: Colors.grey[400]),
+                                  //bottom: BorderSide(color: Colors.grey[400]),
+                                ),
+                              ),
+                              child: GestureDetector(
+                                onTap: () {
+                                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => PFHome()));
+                                },
+                                child: Column(
+                                  children: [
+                                    Text('7',style: GoogleFonts.poppins(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w500,letterSpacing: 1.2),textAlign: TextAlign.center,),
+                                    Text('Transport Crop',style: GoogleFonts.poppins(color: Colors.black,fontSize: 9,fontWeight: FontWeight.w500,letterSpacing: .5),),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+
+                        ],
+                    ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(bottom: 18.0),
+              child: Divider(height: 2,color: Colors.grey,),
+            ),
+
+
             Container(
               color: Color.fromRGBO(0,0,87,1),
               height: MediaQuery.of(context).size.height * 0.21,

@@ -1,4 +1,4 @@
-import 'package:farmer/customer/bottomnav.dart';
+
 import 'package:farmer/customer/drawer/profile/trprofile.dart';
 import 'package:farmer/customer/drawer/purchasingbill/pbmain.dart';
 import 'package:farmer/customer/traderselctedcrop/tchangecrops/ccmain.dart';
@@ -13,6 +13,14 @@ class TraderSelectCropHome extends StatefulWidget {
 }
 
 class _TraderSelectCropHomeState extends State<TraderSelectCropHome> {
+
+  ScrollController _scrollController;
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
   @override
 
   Widget build(BuildContext context) {
@@ -163,63 +171,68 @@ class _TraderSelectCropHomeState extends State<TraderSelectCropHome> {
             ),
           ),
           SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 15,right: 15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    alignment: Alignment.center,
-                    child: Padding(
-                      padding: EdgeInsets.only(top :MediaQuery.of(context).size.height*0.1,bottom: MediaQuery.of(context).size.height*0.1),
-                      child: Text(
-                        "Selected \nCrops",
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 30,
-                        ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: EdgeInsets.only(top :MediaQuery.of(context).size.height*0.1,bottom: MediaQuery.of(context).size.height*0.1),
+                    child: Text(
+                      "Selected \nCrops",
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 30,
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: GridView.count(
-                      crossAxisCount: 1,
-                      childAspectRatio: 3.2,
-                      crossAxisSpacing: 20,
-                      mainAxisSpacing: 20,
-                      children: <Widget>[
-                        CategoryCard(
-                          title: "Cotton",
-                          title1: 'Organic Crop',
-                          image: "assets/images/cotton.jpg",
-                          press: () {
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => TSFarmerHome()));
-                          },
-                        ),
-                        CategoryCard(
-                          title: "Lime",
-                          title1: 'Traditional Crop',
-                          image: "assets/images/lime.jpg",
-                          press: () {},
-                        ),
-                        CategoryCard(
-                          title: "Cotton",
-                          title1: 'Organic Crop',
-                          image: "assets/images/cotton.jpg",
-                          press: () {},
-                        ),
-                        CategoryCard(
-                          title: "Lime",
-                          title1: 'Traditional Crop',
-                          image: "assets/images/lime.jpg",
-                          press: () {},
-                        ),
-                      ],
+                ),
+                Expanded(
+                  child: Scrollbar(
+                    isAlwaysShown: true,
+                    controller: _scrollController,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8,right: 15),
+                      child: GridView.count(
+                        
+                        crossAxisCount: 1,
+                        childAspectRatio: 3.2,
+                        crossAxisSpacing: 20,
+                        mainAxisSpacing: 20,
+                        children: <Widget>[
+                          CategoryCard(
+                            title: "Cotton",
+                            title1: 'Organic Crop',
+                            image: "assets/images/cotton.jpg",
+                            press: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => TSFarmerHome()));
+                            },
+                          ),
+                          CategoryCard(
+                            title: "Lime",
+                            title1: 'Traditional Crop',
+                            image: "assets/images/lime.jpg",
+                            press: () {},
+                          ),
+                          CategoryCard(
+                            title: "Cotton",
+                            title1: 'Organic Crop',
+                            image: "assets/images/cotton.jpg",
+                            press: () {},
+                          ),
+                          CategoryCard(
+                            title: "Lime",
+                            title1: 'Traditional Crop',
+                            image: "assets/images/lime.jpg",
+                            press: () {},
+                          ),
+                        ],
+                      ),
                     ),
-                  )
-                ],
-              ),
+                  ),
+                )
+              ],
             ),
           ),
         ],

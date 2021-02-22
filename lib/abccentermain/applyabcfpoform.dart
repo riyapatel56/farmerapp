@@ -1,5 +1,4 @@
 import 'package:farmer/abccentermain/homeabcc.dart';
-import 'package:farmer/farmerpart/bottomnavbar/abccenter/abcenterhome.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,6 +18,8 @@ class _ApplyFormState extends State<ApplyForm> {
   TextEditingController abcvillage = TextEditingController();
   TextEditingController state = TextEditingController();
   TextEditingController abcname = TextEditingController();
+  TextEditingController abcpincode = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class _ApplyFormState extends State<ApplyForm> {
               child: Padding(
                 padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02),
                 child: Text(
-                  'FILL THE Details',
+                  'Create ABC',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.openSans(
                       textStyle: TextStyle(
@@ -344,6 +345,29 @@ class _ApplyFormState extends State<ApplyForm> {
                             ),
                           ],
                         )),*/
+                        Padding(
+                        padding:
+                            EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
+                        child: new Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: <Widget>[
+                            new Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                new Text('Details For ABC Center',
+                                  style: GoogleFonts.openSans(
+                                    textStyle: TextStyle(
+                                      fontSize: 26.0,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black
+                                    ),
+                                  )
+                                ),
+                              ],
+                            ),
+                          ],
+                        )),
 
                         Padding(
                         padding:
@@ -418,6 +442,48 @@ class _ApplyFormState extends State<ApplyForm> {
                             new Flexible(
                               child: new TextField(
                                 controller: abcvillage,
+                                decoration: const InputDecoration(
+                                  hintText: "Enter ",
+                                ),
+                                enabled: true,
+                                // autofocus: !_status,
+                              ),
+                            ),
+                          ],
+                        )),
+
+                        Padding(
+                        padding:
+                            EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
+                        child: new Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: <Widget>[
+                            new Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                new Text('Pincode',
+                                  style: GoogleFonts.openSans(
+                                    textStyle: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black
+                                    ),
+                                  )
+                                ),
+                              ],
+                            ),
+                          ],
+                        )),
+                    Padding(
+                        padding:
+                            EdgeInsets.only(left: 25.0, right: 25.0, top: 2.0),
+                        child: new Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: <Widget>[
+                            new Flexible(
+                              child: new TextField(
+                                controller: abcpincode,
                                 decoration: const InputDecoration(
                                   hintText: "Enter ",
                                 ),
@@ -550,7 +616,7 @@ class _ApplyFormState extends State<ApplyForm> {
                             shape: StadiumBorder(),
                             color: Colors.orange[900],
                             onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ABCMainHome()));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ABCMHome()));
                             },
                             child: Text("Apply",
                               style: GoogleFonts.poppins(color: Colors.white, fontSize: 18.0)

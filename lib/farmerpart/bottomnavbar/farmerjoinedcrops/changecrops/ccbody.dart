@@ -2,7 +2,6 @@
 import 'package:farmer/farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/categories/organiccrops/ocmain.dart';
 import 'package:farmer/farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/categories/traditionalcrops/trmain.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'allcrops/allcrops.dart';
 

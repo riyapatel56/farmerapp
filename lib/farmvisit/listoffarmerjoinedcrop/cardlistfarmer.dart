@@ -16,8 +16,9 @@ class FarmVisitItem extends StatelessWidget {
   final String rating;
   final String phoneno;
   final String landAcre;
+  final String img1;
 
-  const FarmVisitItem({Key key, this.image, this.name, this.growing, this.since, this.address, this.email, this.phoneno, this.landAcre, this.rating}) : super(key: key);
+  const FarmVisitItem({Key key, this.image, this.name, this.growing, this.since, this.address, this.email, this.phoneno, this.landAcre, this.rating, this.img1}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

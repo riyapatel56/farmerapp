@@ -16,29 +16,45 @@ class FarmerMemberHome extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('List Of Farmer Members',style: GoogleFonts.openSans(color: Colors.white,fontWeight: FontWeight.w600,letterSpacing: 1.4),),
+        title: Text('List Of Farmer Members',style: GoogleFonts.openSans(fontSize: 21,color: Colors.white,fontWeight: FontWeight.w600,letterSpacing: 1.4),),
         backgroundColor: Colors.orange[800],
       ),
-      body: GridView.builder(
-      physics: ScrollPhysics(),
-      shrinkWrap: true,
-      itemCount: frmms.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 2.55),//childAspectRatio: MediaQuery.of(context).size.height * 0.00257
-      itemBuilder: (context, i) => ChangeNotifierProvider.value(value: frmms[i],
-      child: FarmerMemberItem(
-        name: frmms[i].name,
-        id: frmms[i].id,
-        imgUrl: frmms[i].imgUrl,
-        cropsell: frmms[i].cropsell,
-        phoneno: frmms[i].phoneno,
-        since: frmms[i].since,
-        rating: frmms[i].rating,
-        email: frmms[i].email,
-        state: frmms[i].state,
-        growing: frmms[i].growing,
-      ),
-      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 2.0,right: 2,top: 8,),
+            child: Divider(height: 1,color: Colors.grey[700],),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(alignment: Alignment.centerLeft,child: Text('Farmer Members = 8',style: GoogleFonts.openSans(fontSize: 22,color: Colors.teal[700],fontWeight: FontWeight.w600,letterSpacing: 1.0),)),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 2.0,right: 2,top: 4,bottom: 10),
+            child: Divider(height: 1,color: Colors.grey[700],),
+          ),
+          GridView.builder(
+          physics: ScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: frmms.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 3.55),//childAspectRatio: MediaQuery.of(context).size.height * 0.00257
+          itemBuilder: (context, i) => ChangeNotifierProvider.value(value: frmms[i],
+          child: FarmerMemberItem(
+            name: frmms[i].name,
+            id: frmms[i].id,
+            imgUrl: frmms[i].imgUrl,
+            cropsell: frmms[i].cropsell,
+            phoneno: frmms[i].phoneno,
+            since: frmms[i].since,
+            rating: frmms[i].rating,
+            email: frmms[i].email,
+            state: frmms[i].state,
+            growing: frmms[i].growing,
+          ),
+          ),
     ),
+        ],
+      ),
     );
   }
 }
@@ -74,7 +90,7 @@ class FarmerMemberItem extends StatelessWidget {
         Navigator.of(context).pushNamed(FrmmDetailPage.routeName,arguments: frmm.id);
       },
       child: Padding(
-        padding: EdgeInsets.only(right: 8.0,left: 8,top: 5 ),
+        padding: EdgeInsets.only(right: 8.0,left: 8,top:8 ),
         child: Container(
           //width: double.infinity,
           //height: 0.195 * MediaQuery.of(context).size.height,
@@ -135,48 +151,24 @@ class FarmerMemberItem extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0,right: 18),
+                  child: CircleAvatar(
+                    radius: 22,
+                    backgroundColor: Colors.teal[700],
+                    child: Container(
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      child: Icon(Icons.call,color: Colors.white,)
+                    ),
+                  ),
+                ),
                 //onTap: (){
                   //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Shyam()));
                 //},
                 ],
               ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01),
-                            child: Container(
-                              color: Colors.orange[400],
-                              width: MediaQuery.of(context).size.width * 0.255,
-                              height: MediaQuery.of(context).size.height * 0.045,
-                              child: Center(
-                                child: FittedBox(
-                                  fit: BoxFit.contain,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(width: 7,),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top:3.0),
-                                        child: Icon(Icons.call,color: Color.fromRGBO(0,0,87,1),size: 19),
-                                      ),
-                                      SizedBox(width: 7,),
-                                      Text('Call',style: GoogleFonts.openSans(fontSize: 20,color: Color.fromRGBO(0,0,87,1),fontWeight: FontWeight.w600,letterSpacing: .8), )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                        
-                        
-                      ],
-                    ),
-              ),
+              
 
 
             ],

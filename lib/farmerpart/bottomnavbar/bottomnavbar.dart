@@ -2,9 +2,11 @@
 import 'package:farmer/farmerpart/bottomnavbar/shopping/mainscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'abccenter/abcenterhome.dart';
+import 'abcfpo/homeabcfpo.dart';
 import 'farmerjoinedcrops/fjcmainpage.dart';
+import 'msp/msphome.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+ 
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -15,8 +17,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
   
   var currentTab = [
     FJCMainPage(),
-    ABCCenterHome(),
+    ABCFPOHome(),
     ShopScreen(),
+    MSPHome(),
   ];
 
   @override
@@ -25,6 +28,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       body: currentTab[provider.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         selectedItemColor: Colors.green[900],
         currentIndex: provider.currentIndex,
@@ -38,11 +42,15 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ),
           BottomNavigationBarItem(
             icon: new Icon(Icons.center_focus_strong),
-            label: 'ABC Center',
+            label: 'Sell',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_outlined),
+            icon: Icon(Icons.shopping_cart_outlined),
             label: 'Shop',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(MdiIcons.currencyInr),
+            label: 'MSP',
           )
         ],
       ),

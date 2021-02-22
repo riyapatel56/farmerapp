@@ -1,7 +1,6 @@
 
 import 'package:farmer/customer/traderselctedcrop/tchangecrops/tcategories/torganiccrops/tocmain.dart';
 import 'package:farmer/customer/traderselctedcrop/tchangecrops/tcategories/ttraditionalcrops/ttrmain.dart';
-import 'package:farmer/farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/categories/traditionalcrops/trmain.dart';
 import 'package:flutter/material.dart';
 
 import 'tallcrops/tallcrops.dart';

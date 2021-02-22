@@ -45,7 +45,7 @@ class MacDetailPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Price',
+                          'Rent Price',
                           style: GoogleFonts.openSans(
                             fontSize: 24,
                             color: Colors.green[900],
@@ -58,6 +58,15 @@ class MacDetailPage extends StatelessWidget {
                           style: GoogleFonts.roboto(
                             fontSize: 16,
                             color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 1.2,
+                          ),
+                        ),
+                        Text(
+                          '(Per Hour)',
+                          style: GoogleFonts.roboto(
+                            fontSize: 12,
+                            color: Colors.black,
                             letterSpacing: 1.2,
                           ),
                         ),
@@ -65,7 +74,7 @@ class MacDetailPage extends StatelessWidget {
                     ),
 
                     Padding(
-                      padding: EdgeInsets.only(left: MediaQuery.of(context).size.height * 0.15),
+                      padding: EdgeInsets.only(left: MediaQuery.of(context).size.height * 0.10),
                       child: Container(
                         alignment: Alignment.centerRight,
                         child: FlatButton(

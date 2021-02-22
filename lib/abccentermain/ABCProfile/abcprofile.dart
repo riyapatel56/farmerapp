@@ -1,5 +1,5 @@
 
-import 'package:farmer/abccentermain/homeabcc.dart';
+import 'package:farmer/resetpassword/resetpassword.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -44,25 +44,23 @@ class MapScreenState extends State<ABCProfile>
           'Profile',
           style: GoogleFonts.openSans(color: Colors.orange[900],fontWeight: FontWeight.w600,letterSpacing: 1.4),
         ),
-        /*actions: [
+        actions: [
           Padding(
             padding: const EdgeInsets.only(right: 5.0, top: 8,bottom: 8),
             child: GestureDetector(
               onTap: () {
-                //Navigator.of(context).push(MaterialPageRoute(builder: (context) => ABCMainHome()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResetPassword()));
               },
               child: Container(
                 color: Colors.red[400],
-                child: Row(
-                  children: [
-                    IconButton(icon: Icon(Icons.verified),iconSize: 20,color: Colors.white, onPressed: () {  },),
-                    Text(' Apply For ABC Center ',style: GoogleFonts.openSans(color: Colors.white, fontWeight: FontWeight.w600),)
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8.0,left: 8),
+                  child: Center(child: Text( 'Reset Password ',style: GoogleFonts.openSans(color: Colors.white, fontWeight: FontWeight.w600),)),
                 ),
               ),
             ),
           ),
-        ],*/
+        ],
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.orange[800]),
       ),
@@ -693,9 +691,9 @@ class MapScreenState extends State<ABCProfile>
 }
 
 class ImagePickerData extends StatefulWidget {
-  List Data;
-  int ITId;
-  ImagePickerData({this.Data, this.ITId});
+  final List data;
+  final int iitd;
+  ImagePickerData({this.data, this.iitd});
   @override
   AttachmentState createState() => new AttachmentState();
 }

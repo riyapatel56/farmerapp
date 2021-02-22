@@ -14,10 +14,16 @@ class Fvfarmer with ChangeNotifier{
   final String phoneno;
   //final Widget page;
   final String email;
+  final String img1;
+  final String img2;
+  final String img3;
+  final String img4;
+  final String img5;
+  final String img6;
   
   final String landAcre;
 
-  Fvfarmer({this.id, this.landAcre, this.name, this.growing, this.since, this.address, this.rating, this.image, this.phoneno, this.email,});
+  Fvfarmer({this.img1, this.img2, this.img3, this.img4, this.img5, this.img6, this.id, this.landAcre, this.name, this.growing, this.since, this.address, this.rating, this.image, this.phoneno, this.email,});
 
   
 }
@@ -35,6 +41,13 @@ class Fvfarmers with ChangeNotifier{
       phoneno: '9874563218',
       email: 'abc@gmail.com',
       landAcre: '1',
+      img1: 'assets/images/fv1.jpg',
+      img2: 'assets/images/fv2.jpg',
+      img3: 'assets/images/fv3.jpg',
+      img4: 'assets/images/fv4.jpg',
+      img5: 'assets/images/fv5.jpg',
+      img6: 'assets/images/fv6.jpg',
+      
     ),
     Fvfarmer(
       id: '2',
@@ -47,6 +60,12 @@ class Fvfarmers with ChangeNotifier{
       image: 'assets/images/p2.jpg',
       email: 'abc@gmail.com',
       landAcre: '10',
+      img1: 'assets/images/fv1.jpg',
+      img2: 'assets/images/fv2.jpg',
+      img3: 'assets/images/fv3.jpg',
+      img4: 'assets/images/fv4.jpg',
+      img5: 'assets/images/fv5.jpg',
+      img6: 'assets/images/fv6.jpg',
     ),
     Fvfarmer(
       id: '3',
@@ -59,6 +78,12 @@ class Fvfarmers with ChangeNotifier{
       phoneno: '9874563218',
       email: 'abc@gmail.com',
       landAcre: '1',
+      img1: 'assets/images/fv1.jpg',
+      img2: 'assets/images/fv2.jpg',
+      img3: 'assets/images/fv3.jpg',
+      img4: 'assets/images/fv4.jpg',
+      img5: 'assets/images/fv5.jpg',
+      img6: 'assets/images/fv6.jpg',
     ),
     Fvfarmer(
       id: '4',
@@ -71,6 +96,12 @@ class Fvfarmers with ChangeNotifier{
       image: 'assets/images/p2.jpg',
       email: 'abc@gmail.com',
       landAcre: '10',
+      img1: 'assets/images/fv1.jpg',
+      img2: 'assets/images/fv2.jpg',
+      img3: 'assets/images/fv3.jpg',
+      img4: 'assets/images/fv4.jpg',
+      img5: 'assets/images/fv5.jpg',
+      img6: 'assets/images/fv6.jpg',
     ),
     Fvfarmer(
       id: '5',
@@ -83,18 +114,12 @@ class Fvfarmers with ChangeNotifier{
       phoneno: '9874563218',
       email: 'abc@gmail.com',
       landAcre: '1',
-    ),
-    Fvfarmer(
-      id: '6',
-      name: 'Yam Modi',
-      growing: 'Paddy',
-      since: '2004',
-      phoneno: '1234567890',
-      rating: '4.8',
-      address: 'Punjab',
-      image: 'assets/images/p2.jpg',
-      email: 'abc@gmail.com',
-      landAcre: '10',
+      img1: 'assets/images/fv1.jpg',
+      img2: 'assets/images/fv2.jpg',
+      img3: 'assets/images/fv3.jpg',
+      img4: 'assets/images/fv4.jpg',
+      img5: 'assets/images/fv5.jpg',
+      img6: 'assets/images/fv6.jpg',
     ),
     
     
@@ -108,60 +133,3 @@ class Fvfarmers with ChangeNotifier{
     return _items.firstWhere((fvf) => fvf.id == id);
   }
 }
-
-
-/*class FarmVisitList extends StatefulWidget {
-  @override
-  _FarmVisitListState createState() => _FarmVisitListState();
-}
-
-class _FarmVisitListState extends State<FarmVisitList> {
-  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(bottom : 0.058 * MediaQuery.of(context).size.height,),
-              child: GridView.count(
-                crossAxisCount: 1,
-                childAspectRatio: 0.00275 * MediaQuery.of(context).size.height,
-                children: [
-                  FarmVisitListCard(
-                    image: 'assets/images/p2.jpg',
-                    name: 'Umesh Shah',
-                    growing: 'Wheat',
-                    since: '2012',
-                    address: 'Jaipur, Rajasthan',
-                    page: Umeshs(),
-                  ),
-                  FarmVisitListCard(
-                    image: 'assets/images/p2.jpg',
-                    name: 'Kiran Shah',
-                    growing: 'Apple',
-                    since: '2015',
-                    address: 'Amritsar, Punjab',
-                    //page: Kiran(),
-                  ),
-                  FarmVisitListCard(
-                    image: 'assets/images/p2.jpg',
-                    name: 'Mitesh Shah',
-                    growing: 'Coffee',
-                    since: '2004',
-                    address: 'Kerela',
-                    //page: Mitesh(),
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-        ],
-      ),
-    );
-  }
-}*/

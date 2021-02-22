@@ -1,6 +1,4 @@
-import 'package:farmer/abccentermain/farmersrequest/frhome.dart';
-import 'package:farmer/abccentermain/loaninsurance/lihome.dart';
-import 'package:farmer/abccentermain/partnershipfarming/pfhome.dart';
+
 import 'package:farmer/abccentermain/request/newrequest/newrequest.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,7 +7,7 @@ import 'ABCProfile/abcprofile.dart';
 import 'request/pendingrequest/pendingrequest.dart';
 
 
-class ABCMainHome extends StatefulWidget {
+/*class ABCMainHome extends StatefulWidget {
   @override
   _ABCMainHomeState createState() => _ABCMainHomeState();
 }
@@ -20,7 +18,7 @@ class _ABCMainHomeState extends State<ABCMainHome>
 
   @override
   void initState() {
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 1, vsync: this);
     super.initState();
   }
 
@@ -48,11 +46,11 @@ class _ABCMainHomeState extends State<ABCMainHome>
           labelColor: Color.fromRGBO(0,0,87,1),
           tabs: [
             Tab(
-              child: Text("ABC CENTER",style: GoogleFonts.openSans(fontSize: 14,fontWeight: FontWeight.w600),),
+              child: Text("ABCMHome CENTER",style: GoogleFonts.openSans(fontSize: 14,fontWeight: FontWeight.w600),),
             ),
-            Tab(
-              child: Text('FPO',style: GoogleFonts.openSans(fontSize: 14,fontWeight: FontWeight.w600),),
-            ),
+            //Tab(
+              //child: Text('FPO',style: GoogleFonts.openSans(fontSize: 14,fontWeight: FontWeight.w600),),
+            //),
           ],
           controller: _tabController,
           indicatorColor: Colors.white,
@@ -63,25 +61,25 @@ class _ABCMainHomeState extends State<ABCMainHome>
       body: TabBarView(
         children: [
 
-          //ABC
-          ABC(),
+          //ABCMHome
+          ABCMHome(),
           
           //pending
-          FPO(),
+          //FPO(),
 
         ],
         controller: _tabController,
       ),
     );
   }
-}
+}*/
 
-class ABC extends StatefulWidget {
+class ABCMHome extends StatefulWidget {
   @override
   _ABCState createState() => _ABCState();
 }
 
-class _ABCState extends State<ABC>
+class _ABCState extends State<ABCMHome>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
 
@@ -92,63 +90,86 @@ class _ABCState extends State<ABC>
   }
   @override
   Widget build(BuildContext context) {
-    return Column(
-            children: [
-              
-               Padding(
-              padding: const EdgeInsets.only(left: 54,right:54,top:18,bottom: 20),
-              child: Container(
-                height: 45,
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(226,226,226,1)
-                ),
-                child: TabBar(
-                  controller: _tabController,
-                  // give the indicator a decoration (color and border radius)
-                  indicator: BoxDecoration(
-                    color: Colors.lightGreen[400]
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ABC Dashboard',style: GoogleFonts.openSans(color: Colors.white,fontWeight: FontWeight.w600,letterSpacing: 1.1),),
+        backgroundColor: Colors.orange[600],
+        automaticallyImplyLeading: false,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 18.0),
+            child: IconButton(
+              icon: Icon(Icons.person_add,size: 35,color: Color.fromRGBO(0,0,87,1),), 
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ABCProfile()));
+              },
+            ),
+          ),
+        ],
+      ),
+      body: Column(
+              children: [
+                
+                Padding(
+                padding: const EdgeInsets.only(left: 54,right:54,top:18,bottom: 20),
+                child: Container(
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(226,226,226,1)
                   ),
-                  labelColor: Color.fromRGBO(0,0,87,1),
-                  unselectedLabelColor: Colors.black,
-                  tabs: [
-                    // first tab [you can add an icon using the icon property]
-                    Tab(
-                      text: 'New Request',
+                  child: TabBar(
+                    controller: _tabController,
+                    // give the indicator a decoration (color and border radius)
+                    indicator: BoxDecoration(
+                      color: Colors.lightGreen[400]
+                    ),
+                    labelColor: Color.fromRGBO(0,0,87,1),
+                    unselectedLabelColor: Colors.black,
+                    tabs: [
+                      FittedBox(
+                        fit: BoxFit.contain,
+                        child: Tab(
+                          text: 'New Request',
+                        ),
+                      ),
+
+                      // second tab [you can add an icon using the icon property]
+                      FittedBox(
+                        fit: BoxFit.contain,
+                        child: Tab(
+                          text: 'Pending Request',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // tab bar view here
+              Expanded(
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    // first tab bar view widget 
+                    SingleChildScrollView(
+                      child: Center(
+                        child: NewRequest(),
+                      ),
                     ),
 
-                    // second tab [you can add an icon using the icon property]
-                    Tab(
-                      text: 'Pending Request',
+                    // second tab bar view widget
+                    SingleChildScrollView(
+                      child: Center(
+                        child: PendingRequest(),
+                      ),
                     ),
+
                   ],
                 ),
               ),
+
+              ],
             ),
-            // tab bar view here
-            Expanded(
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  // first tab bar view widget 
-                  SingleChildScrollView(
-                    child: Center(
-                      child: NewRequest(),
-                    ),
-                  ),
-
-                  // second tab bar view widget
-                  SingleChildScrollView(
-                    child: Center(
-                      child: PendingRequest(),
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-
-            ],
-          );
+    );
   }
 }
 
@@ -168,62 +189,86 @@ class _FPOState extends State<FPO>
   }
   @override
   Widget build(BuildContext context) {
-    return Column(
-            children: [
-              
-               Padding(
-              padding: const EdgeInsets.only(left: 54,right:54,top:18,bottom: 20),
-              child: Container(
-                height: 45,
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(226,226,226,1)
-                ),
-                child: TabBar(
-                  controller: _tabController,
-                  // give the indicator a decoration (color and border radius)
-                  indicator: BoxDecoration(
-                    color: Colors.lightGreen[400]
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('FPO Dashboard',style: GoogleFonts.openSans(color: Colors.white,fontWeight: FontWeight.w600,letterSpacing: 1.1),),
+        backgroundColor: Colors.orange[600],
+        automaticallyImplyLeading: false,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 18.0),
+            child: IconButton(
+              icon: Icon(Icons.person_add,size: 35,color: Color.fromRGBO(0,0,87,1),), 
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ABCProfile()));
+              },
+            ),
+          ),
+        ],
+      ),
+      body: Column(
+              children: [
+                
+                 Padding(
+                padding: const EdgeInsets.only(left: 54,right:54,top:18,bottom: 20),
+                child: Container(
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(226,226,226,1)
                   ),
-                  labelColor: Color.fromRGBO(0,0,87,1),
-                  unselectedLabelColor: Colors.black,
-                  tabs: [
-                    // first tab [you can add an icon using the icon property]
-                    Tab(
-                      text: 'New Request',
+                  child: TabBar(
+                    controller: _tabController,
+                    // give the indicator a decoration (color and border radius)
+                    indicator: BoxDecoration(
+                      color: Colors.lightGreen[400]
+                    ),
+                    labelColor: Color.fromRGBO(0,0,87,1),
+                    unselectedLabelColor: Colors.black,
+                    tabs: [
+                      // first tab [you can add an icon using the icon property]
+                      FittedBox(
+                        fit: BoxFit.contain,
+                        child: Tab(
+                          text: 'New Request',
+                        ),
+                      ),
+
+                      // second tab [you can add an icon using the icon property]
+                      FittedBox(
+                        fit: BoxFit.contain,
+                        child: Tab(
+                          text: 'Pending Request',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // tab bar view here
+              Expanded(
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    // first tab bar view widget 
+                    SingleChildScrollView(
+                      child: Center(
+                        child: NewRequest(),
+                      ),
                     ),
 
-                    // second tab [you can add an icon using the icon property]
-                    Tab(
-                      text: 'Pending Request',
+                    // second tab bar view widget
+                    SingleChildScrollView(
+                      child: Center(
+                        child: PendingRequest(),
+                      ),
                     ),
+
                   ],
                 ),
               ),
+
+              ],
             ),
-            // tab bar view here
-            Expanded(
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  // first tab bar view widget 
-                  SingleChildScrollView(
-                    child: Center(
-                      child: NewRequest(),
-                    ),
-                  ),
-
-                  // second tab bar view widget
-                  SingleChildScrollView(
-                    child: Center(
-                      child: PendingRequest(),
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-
-            ],
-          );
+    );
   }
 }

@@ -1,5 +1,6 @@
 
 import 'package:after_layout/after_layout.dart';
+import 'package:farmer/farmerpart/bottomnavbar/msp/allmspcrop/allcropmsp.dart';
 import 'package:farmer/logsign.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:farmer/abccentermain/farmermembers/farmmember.dart';
@@ -11,10 +12,6 @@ import 'package:farmer/customer/traderselctedcrop/farmerlist/tsfarmers.dart';
 import 'package:farmer/customer/traderselctedcrop/tchangecrops/tallcrops/tcrops.dart';
 import 'package:farmer/customer/traderselctedcrop/tchangecrops/tcategories/torganiccrops/torganic.dart';
 import 'package:farmer/customer/traderselctedcrop/tchangecrops/tcategories/ttraditionalcrops/ttraditional.dart';
-import 'package:farmer/farmerpart/bottomnavbar/abccenter/center.dart';
-import 'package:farmer/farmerpart/bottomnavbar/abccenter/detailpageabccenter.dart';
-import 'package:farmer/farmerpart/bottomnavbar/abccenter/listoffarmersforcenter/fcntdetailpage.dart';
-import 'package:farmer/farmerpart/bottomnavbar/abccentmember/trjcenter/trjcenter.dart';
 import 'package:farmer/farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/allcrops/crpdetail.dart';
 import 'package:farmer/farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/categories/organiccrops/ocdetail.dart';
 import 'package:farmer/farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/categories/traditionalcrops/trdetail.dart';
@@ -41,21 +38,35 @@ import 'abccentermain/trdrequest/trdrdetailpage.dart';
 import 'abccentermain/trdrequest/trdrequest.dart';
 import 'customer/bottomnav.dart';
 import 'customer/drawer/purchasingbill/pbfdetail.dart';
+import 'customer/msp/allmspcrop/tallcropmsp.dart';
+import 'customer/msp/organicmsp/torgcropmsp.dart';
+import 'customer/msp/trdmsp/ttrdcropmsp.dart';
 import 'customer/tabccenter/listoftraders/tcenter.dart';
 import 'customer/tabccenter/listoftraders/tcntdetailpage.dart';
 import 'customer/tabccenter/tcenter.dart';
 import 'customer/tabccenter/tdetailpageabccenter.dart';
 import 'customer/tabccentermember/farmmcenter/fmcenter.dart';
 import 'customer/tabccentermember/farmmcenter/fmcntdetailpage.dart';
+import 'customer/tfpo/listoftradersforfpo/detailtraderfpo.dart';
+import 'customer/tfpo/listoftradersforfpo/traderfpo.dart';
+import 'customer/tfpo/tdetailpagefpo.dart';
+import 'customer/tfpo/tfpo.dart';
+import 'customer/tfpomember/farmmfpo/fmcntdetailpage.dart';
+import 'customer/tfpomember/farmmfpo/fmfpo.dart';
 import 'customer/traderselctedcrop/farmerlist/detailtsfarmer.dart';
 import 'customer/traderselctedcrop/tchangecrops/farmerjoint/fjt.dart';
 import 'customer/traderselctedcrop/tchangecrops/farmerjoint/fjtdetailpage.dart';
 import 'customer/traderselctedcrop/tchangecrops/tallcrops/tcrpdetail.dart';
 import 'customer/traderselctedcrop/tchangecrops/tcategories/torganiccrops/tocdetail.dart';
 import 'customer/traderselctedcrop/tchangecrops/tcategories/ttraditionalcrops/ttrdetail.dart';
-import 'farmerpart/bottomnavbar/abccenter/center.dart';
-import 'farmerpart/bottomnavbar/abccenter/listoffarmersforcenter/fcenter.dart';
-import 'farmerpart/bottomnavbar/abccentmember/trjcenter/trjcdetailpage.dart';
+import 'farmerpart/bottomnavbar/abcfpo/abccenter/center.dart';
+import 'farmerpart/bottomnavbar/abcfpo/abccenter/detailpageabccenter.dart';
+import 'farmerpart/bottomnavbar/abcfpo/abccenter/listoffarmersforcenter/fcenter.dart';
+import 'farmerpart/bottomnavbar/abcfpo/abccenter/listoffarmersforcenter/fcntdetailpage.dart';
+import 'farmerpart/bottomnavbar/abcfpo/fpo/detailpagefpo.dart';
+import 'farmerpart/bottomnavbar/abcfpo/fpo/fpo.dart';
+import 'farmerpart/bottomnavbar/abcfpo/fpo/listoffarmersforfpo/detailfarmerfpo.dart';
+import 'farmerpart/bottomnavbar/abcfpo/fpo/listoffarmersforfpo/farmerfpo.dart';
 import 'farmerpart/bottomnavbar/bottomnavbar.dart';
 import 'farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/allcrops/crops.dart';
 import 'farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/categories/organiccrops/organic.dart';
@@ -63,6 +74,12 @@ import 'farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/categories/traditi
 import 'farmerpart/bottomnavbar/farmerjoinedcrops/changecrops/listoffarmerjoinedcrop/farmerjoin.dart';
 import 'farmerpart/bottomnavbar/farmerjoinedcrops/mainfarmerjoinedcrops/scbuyerlist/scbdetailpage.dart';
 import 'farmerpart/bottomnavbar/farmerjoinedcrops/mainfarmerjoinedcrops/scbuyerlist/scbuyerscard.dart';
+import 'farmerpart/bottomnavbar/memabcfpo/abccentmember/trjcenter/trjcdetailpage.dart';
+import 'farmerpart/bottomnavbar/memabcfpo/abccentmember/trjcenter/trjcenter.dart';
+import 'farmerpart/bottomnavbar/memabcfpo/fpomember/trjfpo/trjcdetailpage.dart';
+import 'farmerpart/bottomnavbar/memabcfpo/fpomember/trjfpo/trjcenter.dart';
+import 'farmerpart/bottomnavbar/msp/organicmsp/orgcropmsp.dart';
+import 'farmerpart/bottomnavbar/msp/trdmsp/trdcropmsp.dart';
 import 'farmerpart/bottomnavbar/shopping/categories/subcategories.dart/machine/machinecard.dart';
 import 'farmerpart/bottomnavbar/shopping/categories/subcategories.dart/machine/mdetailpage.dart';
 import 'farmerpart/bottomnavbar/shopping/categories/subcategories.dart/seeds/seed.dart';
@@ -186,6 +203,43 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
         value: Tradermembers(),
         ),
+        ChangeNotifierProvider.value(
+        value: Fpos(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Farmerfpos(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Tfpos(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Traderfpos(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Trjfpos(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Fmfpos(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Mspallcrops(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Tmspallcrops(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Orgmspcrops(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Torgmspcrops(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Trdmspcrops(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Ttrdmspcrops(),
+        ),
+        
         
       ],
 
@@ -226,7 +280,12 @@ class MyApp extends StatelessWidget {
         FmcntDetailPage.routeName: (context) =>  FmcntDetailPage(),
         FrmmDetailPage.routeName: (context) =>  FrmmDetailPage(),
         TrmmDetailPage.routeName: (context) =>  TrmmDetailPage(),
-
+        FPODetailPage.routeName: (context) =>  FPODetailPage(),
+        FFPODetailPage.routeName: (context) =>  FFPODetailPage(),
+        TFPODetailPage.routeName: (context) =>  TFPODetailPage(),
+        TJFPODetailPage.routeName: (context) =>  TJFPODetailPage(),
+        TrjFPODetailPage.routeName: (context) =>  TrjFPODetailPage(),
+        FmfpoDetailPage.routeName: (context) =>  FmfpoDetailPage(),
       },
       ),
     );

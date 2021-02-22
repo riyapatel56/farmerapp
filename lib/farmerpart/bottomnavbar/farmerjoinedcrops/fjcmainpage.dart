@@ -17,6 +17,14 @@ class FJCMainPage extends StatefulWidget {
 }
 
 class _FJCMainPageState extends State<FJCMainPage> {
+
+  ScrollController _scrollController;
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
   @override
 
   Widget build(BuildContext context) {
@@ -229,63 +237,68 @@ class _FJCMainPageState extends State<FJCMainPage> {
               ),
             ),
             SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15,right: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.center,
-                      child: Padding(
-                        padding: EdgeInsets.only(top :MediaQuery.of(context).size.height*0.1,bottom: MediaQuery.of(context).size.height*0.1),
-                        child: Text(
-                          "Joined \nCrops",
-                          style: GoogleFonts.openSans(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 30,
-                          ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: EdgeInsets.only(top :MediaQuery.of(context).size.height*0.1,bottom: MediaQuery.of(context).size.height*0.1),
+                      child: Text(
+                        "Joined \nCrops",
+                        style: GoogleFonts.openSans(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 30,
                         ),
                       ),
                     ),
-                    Expanded(
-                      child: GridView.count(
-                        crossAxisCount: 1,
-                        childAspectRatio: 3.2,
-                        crossAxisSpacing: 20,
-                        mainAxisSpacing: 20,
-                        children: <Widget>[
-                          CategoryCard(
-                            title: "Cotton",
-                            title1: 'Organic Crop',
-                            image: "assets/images/cotton.jpg",
-                            press: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ScBuyerList()));
-                            },
-                          ),
-                          CategoryCard(
-                            title: "Lime",
-                            title1: 'Traditional Crop',
-                            image: "assets/images/lime.jpg",
-                            press: () {},
-                          ),
-                          CategoryCard(
-                            title: "Cotton",
-                            title1: 'Organic Crop',
-                            image: "assets/images/cotton.jpg",
-                            press: () {},
-                          ),
-                          CategoryCard(
-                            title: "Lime",
-                            title1: 'Traditional Crop',
-                            image: "assets/images/lime.jpg",
-                            press: () {},
-                          ),
-                        ],
+                  ),
+                  Expanded(
+                    child: Scrollbar(
+                      isAlwaysShown: true,
+                      controller: _scrollController,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8.0,right: 15),
+                        child: GridView.count(
+                          //controller: _scrollController,
+                          crossAxisCount: 1,
+                          childAspectRatio: 3.2,
+                          crossAxisSpacing: 20,
+                          mainAxisSpacing: 20,
+                          children: <Widget>[
+                            CategoryCard(
+                              title: "Cotton",
+                              title1: 'Organic Crop',
+                              image: "assets/images/cotton.jpg",
+                              press: () {
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => ScBuyerList()));
+                              },
+                            ),
+                            CategoryCard(
+                              title: "Lime",
+                              title1: 'Traditional Crop',
+                              image: "assets/images/lime.jpg",
+                              press: () {},
+                            ),
+                            CategoryCard(
+                              title: "Cotton",
+                              title1: 'Organic Crop',
+                              image: "assets/images/cotton.jpg",
+                              press: () {},
+                            ),
+                            CategoryCard(
+                              title: "Lime",
+                              title1: 'Traditional Crop',
+                              image: "assets/images/lime.jpg",
+                              press: () {},
+                            ),
+                          ],
+                        ),
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  )
+                ],
               ),
             ),
           ],

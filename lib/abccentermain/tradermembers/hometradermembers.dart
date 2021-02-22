@@ -21,26 +21,42 @@ class TraderMemberHome extends StatelessWidget {
         title: Text('List Of Trader Members',style: GoogleFonts.openSans(color: Colors.white,fontWeight: FontWeight.w600,letterSpacing: 1.4),),
         backgroundColor: Colors.orange[800],
       ),
-      body: GridView.builder(
-      physics: ScrollPhysics(),
-      shrinkWrap: true,
-      itemCount: trmms.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 2.55),//childAspectRatio: MediaQuery.of(context).size.height * 0.00257
-      itemBuilder: (context, i) => ChangeNotifierProvider.value(value: trmms[i],
-      child: TraderMemberItem(
-        name: trmms[i].name,
-        id: trmms[i].id,
-        imgUrl: trmms[i].imgUrl,
-        cropsell: trmms[i].cropsell,
-        phoneno: trmms[i].phoneno,
-        since: trmms[i].since,
-        rating: trmms[i].rating,
-        email: trmms[i].email,
-        state: trmms[i].state,
-        trading: trmms[i].trading,
-      ),
-      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 2.0,right: 2,top: 8,),
+            child: Divider(height: 1,color: Colors.grey[700],),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(alignment: Alignment.centerLeft,child: Text('Trader Members = 14',style: GoogleFonts.openSans(fontSize: 22,color: Colors.teal[700],fontWeight: FontWeight.w600,letterSpacing: 1.0),)),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 2.0,right: 2,top: 4,bottom: 10),
+            child: Divider(height: 1,color: Colors.grey[700],),
+          ),
+          GridView.builder(
+          physics: ScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: trmms.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1,childAspectRatio: 3.55),//childAspectRatio: MediaQuery.of(context).size.height * 0.00257
+          itemBuilder: (context, i) => ChangeNotifierProvider.value(value: trmms[i],
+          child: TraderMemberItem(
+            name: trmms[i].name,
+            id: trmms[i].id,
+            imgUrl: trmms[i].imgUrl,
+            cropsell: trmms[i].cropsell,
+            phoneno: trmms[i].phoneno,
+            since: trmms[i].since,
+            rating: trmms[i].rating,
+            email: trmms[i].email,
+            state: trmms[i].state,
+            trading: trmms[i].trading,
+          ),
+          ),
     ),
+        ],
+      ),
     );
   }
 }
@@ -76,7 +92,7 @@ class TraderMemberItem extends StatelessWidget {
         Navigator.of(context).pushNamed(TrmmDetailPage.routeName,arguments: trmm.id);
       },
       child: Padding(
-        padding: EdgeInsets.only(right: 8.0,left: 8,top: 5 ),
+        padding: EdgeInsets.only(right: 8.0,left: 8,top: 8 ),
         child: Container(
           //width: double.infinity,
           //height: 0.195 * MediaQuery.of(context).size.height,
@@ -137,49 +153,23 @@ class TraderMemberItem extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0,right: 18),
+                  child: CircleAvatar(
+                    radius: 22,
+                    backgroundColor: Colors.teal[700],
+                    child: Container(
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      child: Icon(Icons.call,color: Colors.white,)
+                    ),
+                  ),
+                ),
                 //onTap: (){
                   //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Shyam()));
                 //},
                 ],
               ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.01),
-                            child: Container(
-                              color: Colors.orange[400],
-                              width: MediaQuery.of(context).size.width * 0.255,
-                              height: MediaQuery.of(context).size.height * 0.045,
-                              child: Center(
-                                child: FittedBox(
-                                  fit: BoxFit.contain,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(width: 7,),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top:3.0),
-                                        child: Icon(Icons.call,color: Color.fromRGBO(0,0,87,1),size: 19),
-                                      ),
-                                      SizedBox(width: 7,),
-                                      Text('Call',style: GoogleFonts.openSans(fontSize: 20,color: Color.fromRGBO(0,0,87,1),fontWeight: FontWeight.w600,letterSpacing: .8), )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-
-                        
-                        
-                      ],
-                    ),
-              ),
-
 
             ],
           ),    

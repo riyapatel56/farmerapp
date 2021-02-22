@@ -1,11 +1,9 @@
-import 'dart:io';
+
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_picker/image_picker.dart';
 
 import 'models/transactions.dart';
-import 'widgets/chart.dart';
 import 'widgets/new_transaction.dart';
 import 'widgets/transaction_list.dart';
 
